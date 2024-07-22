@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import '../css/Slideshow.css';
 
-const SlideshowText = ({text, colors, index}) => {
+const SlideshowText = ({text, colors, index, changeSlide}) => {
     const [currentText, setCurrentText] = useState(text[index]);
     const [currentColor, setCurrentColor] = useState(colors[index]);
     const [previousColor, setPreviousColor] = useState(colors[index]);
@@ -14,8 +14,8 @@ const SlideshowText = ({text, colors, index}) => {
     useEffect(() => {
         setColorH1(false);
         setTransitionH1('leave');
+        setPreviousColor(currentColor);
         setCurrentColor(colors[index]);
-        setPreviousColor(colors[index-1] || colors[3]);
 
         const timeoutId = setTimeout(() => {
             setColorH1(true);
@@ -31,10 +31,10 @@ const SlideshowText = ({text, colors, index}) => {
             <h1 className="mb-4">Get your next</h1>
             <h1 className={`mb-1 ${colorH1 ? currentColor : previousColor} ${transitionH1}`}>{textH1} idea</h1>
             <ul className="flex flex-row text-4xl text-btn-slider list-none">
-                <li className={`cursor-pointer p-2 ${index === 0 ? currentColor : ''}`}>•</li>
-                <li className={`cursor-pointer p-2 ${index === 1 ? currentColor : ''}`}>•</li>
-                <li className={`cursor-pointer p-2 ${index === 2 ? currentColor : ''}`}>•</li>
-                <li className={`cursor-pointer p-2 ${index === 3 ? currentColor : ''}`}>•</li>
+                <li className={`cursor-pointer p-2 ${index === 0 ? currentColor : ''}`} onClick={() => changeSlide(0)}>•</li>
+                <li className={`cursor-pointer p-2 ${index === 1 ? currentColor : ''}`} onClick={() => changeSlide(1)}>•</li>
+                <li className={`cursor-pointer p-2 ${index === 2 ? currentColor : ''}`} onClick={() => changeSlide(2)}>•</li>
+                <li className={`cursor-pointer p-2 ${index === 3 ? currentColor : ''}`} onClick={() => changeSlide(3)}>•</li>
             </ul>
         </div>
     )

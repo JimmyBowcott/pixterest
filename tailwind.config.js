@@ -17,6 +17,7 @@ export default {
       "pixterest-purple": "#c738f2",
       "pixterest-orange": "#eb7a23",
       "pixterest-blue": "#388ceb",
+      "pale-yellow": "#fffd92",
       },
     },
   },

@@ -19,6 +19,18 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes bounce {
+    0% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -20px;
+    }
+    100% {
+      translate: 0 0;
+    }
+  }
   
   .leave {
     animation: fadeOut 0.5s forwards;
@@ -26,4 +38,8 @@
   
   .enter {
     animation: fadeIn 0.5s forwards;
+  }
+  
+  .bounce {
+    animation: bounce 2s ease-in-out infinite;
   }
