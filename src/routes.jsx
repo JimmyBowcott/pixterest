@@ -1,5 +1,6 @@
 import App from "./App";
 import ErrorPage from "./pages/ErrorPage";
+import SearchPage from "./pages/SearchPage";
 
 
 const routes = [

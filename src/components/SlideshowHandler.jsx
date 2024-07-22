@@ -13,7 +13,6 @@ const SlideshowHandler = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIndex((index + 1) % 4);
-            console.log('setting index: ' + index);
         }, 5000);
         return () => clearTimeout(timer);
     })
@@ -25,10 +24,10 @@ const SlideshowHandler = () => {
 
     return (
         <>
-            <div className="relative mt-36">
+            <div className="relative mt-56">
                 <SlideshowText index={index} colors={colorsText} text={text} changeSlide={changeSlide}/>
             </div>
-            <div className="flex justify-center mx-auto overflow-hidden w-screen">
+            <div className="flex justify-center mx-auto h-3/4 overflow-hidden">
                 <div>
                     <Slideshow index={index}  />
                 </div>

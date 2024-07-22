@@ -59,7 +59,7 @@ const Slideshow = ({index}) => {
         <>
             <div className="flex flex-row gap-4 mt-12">
                 {translation.map ((mt, colIndex) => (
-                    <div key={colIndex} className={`w-56 h-full flex flex-col justify-center items-center gap-4 ${mt} ${columnTransition[colIndex]}`}>
+                    <div key={colIndex} className={`w-60 h-full flex flex-col justify-center items-center gap-4 ${mt} ${columnTransition[colIndex]}`}>
                         {tiles.map ((set, tileIndex) => (
                             <div key={tileIndex} className={`w-full h-80 bg-bg-btn-s-d rounded-2xl`}>
                                 <img src={`./src/assets/slideshow/${newIndex[colIndex]}/${tileIndex + colIndex*tiles.length}.png`} className="w-full h-full object-cover rounded-2xl pixelated" />

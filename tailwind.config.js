@@ -8,7 +8,6 @@ export default {
     extend: {
       colors: {
       "pixterest-red": "#e60023",
-      "text-error": "#cc0000",
       "bg-btn-p-hov": "#b60000",
       "bg-btn-s-d": "#e9e9e9",
       "bg-btn-s-hov": "#e2e2e2",
@@ -18,6 +17,11 @@ export default {
       "pixterest-orange": "#eb7a23",
       "pixterest-blue": "#388ceb",
       "pale-yellow": "#fffd92",
+      "pale-blue": "#dafff6",
+      "pale-red": "#ffe2eb",
+      "dark-teal": "#006b6c",
+      "pink-red": "#c31952",
+      "new-red": "#c32f00",
       },
     },
   },

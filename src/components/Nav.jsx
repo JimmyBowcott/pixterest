@@ -3,10 +3,10 @@ import "../css/index.css"
 
 const Nav = () => {
     return (
-        <nav className="m-6 flex flex-row items-center justify-between text-lg">
+        <nav className="px-6 pt-6 pb-5 flex flex-row items-center justify-between text-lg absolute top-0 left-0 w-full bg-white z-50">
           <div className="flex flex-row items-center">
             <img src="favicon.ico" alt="" className="pixelated h-8 w-8 mr-2"/>
-            <p className="text-xl text-text-error mr-4 font-bold">Pixterest</p>
+            <p className="text-xl text-pixterest-red mr-4 font-bold">Pixterest</p>
             <ul className="flex flex-row gap-8 mx-4 items-center">
             <li className="hover:underline"><Link to="/">Today</Link></li>
             <li className="hover:underline"><Link to="/">Watch</Link></li>

@@ -27,7 +27,7 @@ const SlideshowText = ({text, colors, index, changeSlide}) => {
       }, [index]);
 
     return (
-        <div className="flex flex-col items-center text-center justify-center text-5xl absolute top-0 left-1/2 -translate-x-1/2 z-10 w-full px-2">
+        <div className="flex flex-col items-center text-center justify-center text-6xl absolute top-0 left-1/2 -translate-x-1/2 z-10 w-full px-2">
             <h1 className="mb-4">Get your next</h1>
             <h1 className={`mb-1 ${colorH1 ? currentColor : previousColor} ${transitionH1}`}>{textH1} idea</h1>
             <ul className="flex flex-row text-4xl text-btn-slider list-none">
