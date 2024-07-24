@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import Modal from "./Modal";
 import "../css/index.css"
 
 const Nav = ({showSearchBar}) => {
     return (
+      <>
         <nav className="px-6 pt-6 pb-5 flex flex-row items-center justify-between text-lg fixed top-0 w-full bg-white z-50 navbar">
           <div className="flex flex-row items-center">
             <Link to="/" className="flex items-center cursor-pointer">
@@ -26,7 +28,9 @@ const Nav = ({showSearchBar}) => {
             <button className="bg-pixterest-red hover:bg-bg-btn-p-hov text-white rounded-3xl p-1 px-3">Log in</button>
             <button className="bg-bg-btn-s-d hover:bg-bg-btn-s-hov rounded-3xl p-1 px-3">Sign up</button>
           </div>
-      </nav>  
+      </nav>
+      {showSearchBar && <Modal />}
+      </>  
     )
 }
 

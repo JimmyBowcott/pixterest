@@ -91,7 +91,6 @@ function App() {
   return (
     <div className="app">
       <Nav showSearchBar={true}/>
-      <Modal />
       <section id="top" className="h-screen">
         <Homepage />
       </section>

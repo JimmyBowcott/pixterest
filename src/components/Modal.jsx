@@ -18,7 +18,7 @@ export const SearchModal = () => {
     if (!isActive) return null
 
     return (
-        <div className="flex flex-col absolute top-14 left-2 w-full bg-white rounded-2xl p-8 text-almost-black">
+        <div className="flex flex-col absolute top-14 left-2 w-full bg-white rounded-2xl p-8 text-almost-black z-50">
             <h1 className="text-md">Popular on Pixterest</h1>
             <div className="flex flex-wrap gap-2">
                 <PopularTile src="src/assets/artwork/search-bar/1.png" title="Forest"/>
@@ -39,7 +39,7 @@ const Modal = () => {
     if (!isActive) return null
 
     return (
-        <div style={{backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="z-30 h-screen w-screen absolute top-0 left-0">
+        <div style={{backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="z-40 h-screen w-screen absolute top-0 left-0">
         </div>
     )
 }

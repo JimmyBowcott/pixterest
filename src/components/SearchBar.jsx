@@ -38,6 +38,7 @@ function SearchBar() {
             <form onSubmit={handleSearch}>
                 <input
                     id="search-input"
+                    autoComplete="off"
                     type="text"
                     placeholder="Search for retro, nature, etc."
                     className={`w-full border-none rounded-3xl ${isActive ? 'px-4' : 'px-12'} mx-2 bg-bg-btn-s-d hover:bg-bg-btn-s-hov text-lg text-gray-500`}

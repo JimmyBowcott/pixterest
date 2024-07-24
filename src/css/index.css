@@ -44,7 +44,11 @@
 }
 
 .spin {
-    animation: spin 1s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+.spin-anti {
+    animation: spin 2s linear infinite reverse;
 }
 
 html, body {
