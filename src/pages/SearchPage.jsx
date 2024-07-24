@@ -1,18 +1,36 @@
-import ExploreButton from '../components/ExploreButton';
+import Nav from "../components/Nav";
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
 
 const SearchPage = () => {
+    const [loading, setLoading] = useState(true);
+    const query = useQuery();
+    const searchTerm = query.get('q');
+
+    if (loading) {
+        return (
+            <>
+                <Nav showSearchBar={true}/>
+                <div className="text-center mt-20 p-8">
+                    <img src="./src/assets/icons/loading.png" alt="loading" className="spin" />
+                </div>
+            </>
+            
+        );
+    };
+
     return (
-        <div className="flex flex-row justify-around items-center bg-pale-yellow text-pink-red h-screen">
-            <div className="">
-                <h1>Images go here</h1>
+        <>
+            <Nav showSearchBar={true}/>
+            <div className="text-center mt-20 p-8">
+                <h1 className="text-xl">Showing search Results for: {searchTerm}</h1>
             </div>
-            <div className="flex flex-col gap-6 justify-center items-center text-center">
-                <h1 className="text-5xl font-bold">Search for an idea</h1>
-                <p className="text-2xl  max-w-md">What do you want to try next? Think of something you're into—like “easy chicken dinner”—and see what you find.</p>
-                <ExploreButton />
-            </div>
-        </div>
-    )
-}
+        </>
+    );
+};
 
 export default SearchPage;

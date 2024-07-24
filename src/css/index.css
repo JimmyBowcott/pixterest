@@ -38,8 +38,18 @@
     font-display: swap;
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
 html, body {
     font-family: 'Minecraft', sans-serif;
+    height: 100%;
 }
 
 .app {
@@ -54,4 +64,15 @@ html, body {
     image-rendering: -o-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: pixelated;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        display: none;
+    }
+}
+
+:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Example: light blue */
 }

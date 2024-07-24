@@ -2,10 +2,11 @@ import { useState, useEffect, useRef } from 'react'
 import './css/App.css'
 import Nav from './components/Nav'
 import Homepage from './pages/Homepage'
-import SearchPage from './pages/SearchPage'
-import SavePage from './pages/SavePage'
-import ShopPage from './pages/ShopPage'
-import BottomPage from './pages/BottomPage'
+import SearchSection from './pages/SearchSection'
+import SaveSection from './pages/SaveSection'
+import ShopSection from './pages/ShopSection'
+import BottomSection from './pages/BottomSection'
+import Modal from './components/Modal'
 
 function App() {
   const [currentSection, setCurrentSection] = useState(0);
@@ -89,23 +90,25 @@ function App() {
   // Note to self: sections should ideally be class-based, but they're not. Because I'm not changing this.
   return (
     <div className="app">
-      <Nav />
+      <Nav showSearchBar={true}/>
+      <Modal />
       <section id="top" className="h-screen">
         <Homepage />
       </section>
-      <section id="search" className="h-screen">
-        <SearchPage />
+      <section id="search" className="h-screen z-10">
+        <SearchSection />
       </section>
-      <section id="save" className="h-screen">
-        <SavePage />
+      <section id="save" className="h-screen z-10">
+        <SaveSection />
       </section>
-      <section id="shop" className="h-screen">
-        <ShopPage />
+      <section id="shop" className="h-screen z-10">
+        <ShopSection />
       </section>
       <section id="bottom" className="h-screen">
-        <BottomPage />
+        <BottomSection />
       </section>
     </div>
+
   )
 }
 

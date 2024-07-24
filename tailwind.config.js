@@ -22,6 +22,8 @@ export default {
       "dark-teal": "#006b6c",
       "pink-red": "#c31952",
       "new-red": "#c32f00",
+      "almost-black": "#232323",
+      "grey": "#d3d3d3",
       },
     },
   },
