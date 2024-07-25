@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import {parseStringPromise } from 'xml2js';
+import { useState, useEffect, useContext } from 'react';
+import SearchTile from './SearchTile';
+import { LastSearchContext } from '../components/LastSearchContext';
 
   // Distribute items across columns
-  function distributeItems(items, nCols = 7) {
+  function distributeItems(items, nCols) {
     const nItems = items.length;
     const baseCount = Math.floor(nItems / nCols);
     const extraCount = nItems % nCols;
@@ -12,15 +12,25 @@ import {parseStringPromise } from 'xml2js';
         i < extraCount ? baseCount + 1 : baseCount
     );
     
-    console.log(cols);
     return cols;
 }
 
+const getColumnCount = (w) => {
+    const width = window.innerWidth;
+    if (width > w*7) return 7;
+    if (width > w*6) return 6;
+    if (width > w*5) return 5;
+    if (width > w*4) return 4;
+    if (width > w*3) return 3;
+    if (width > w*2) return 2;
+    return 1;
+  };
 
-// WARNING: Big, very big, ugly function coming up
-const SearchItems = ({loading, setLoading, searchTerm}) => {
+// WARNING: Big, ugly function below
+const SearchItems = ({loading, setLoading, searchTerm, removeIndex=false}) => {
     const [items, setItems] = useState([]);
-    const [columns, setColumns] = useState([9,9,9,9,8,8,8]);
+    const [lastItems, setLastItems] = useContext(LastSearchContext);
+    const [columns, setColumns] = useState([]);
 
     // Fetch data from DeviantArt API
     useEffect(() => {
@@ -44,9 +54,7 @@ const SearchItems = ({loading, setLoading, searchTerm}) => {
                 };
 
                 const xpathResult = selectXPath('//item', xml);
-
                 
-
                 // Iterate through all items and add them to the items array
                 for (let i = 0; i < xpathResult.snapshotLength; i++) {
                     const item = xpathResult.snapshotItem(i);
@@ -96,13 +104,18 @@ const SearchItems = ({loading, setLoading, searchTerm}) => {
 
             } finally {
                 if (isMounted) {
-                    setItems(itemsList);
-                    setLoading(false);
 
-                    if (itemsList.length !== 60) {
-                        const newCols = distributeItems(itemsList, 7);
-                        setColumns(newCols);
-                }
+                    if (removeIndex) {
+                        itemsList.splice(removeIndex, 1);
+                    }
+
+                    setItems(itemsList);
+                    console.log('Search items: ', itemsList);
+
+                    if (!removeIndex  && itemsList.length > 0) {
+                        setLastItems(itemsList);
+                    }
+                    setLoading(false);
             }
         }
     }
@@ -115,18 +128,52 @@ const SearchItems = ({loading, setLoading, searchTerm}) => {
 
     }, []);
 
-        
+    // Update column count based on window size
+    useEffect(() => {
+        const updateColumnCount = () => {
+            const newCols = getColumnCount(272);
+            const distributedItems = distributeItems(items, newCols);
+            setColumns(distributedItems);
+        };
 
-    
+        updateColumnCount();
+        window.addEventListener('resize', updateColumnCount);
+
+        return () => {
+            window.removeEventListener('resize', updateColumnCount);
+        };
+    }, [items]);
+
+    const getTileIndex = (index, colIndex) => {
+        let cumSum =  0;
+        for (let i = 0; i < colIndex; i++) {
+            cumSum += columns[i];
+        }
+        return index + cumSum;
+    }
+
+    const getColStart = (colIndex) => {
+        let cumSum =  0;
+        for (let i = 0; i < colIndex; i++) {
+            cumSum += columns[i];
+        }
+        return cumSum;
+    }
 
     if (loading) return null;
 
     return (
-        <>
-            <h1 className="text-xl"> Showing search Results for: {searchTerm}</h1>
-            <div className="flex flex-row">
+        <div className="flex flex-col gap-4 items-center w-full mt-4">
+            <div className="flex flex-row gap-4 w-full justify-center">
+                {columns.map((col, colIndex) => (
+                    <div key={colIndex} className="flex flex-col gap-4">
+                        {items.slice(getColStart(colIndex), getColStart(colIndex) + col).map((item, index) => (
+                            <SearchTile key={index} item={item} index={getTileIndex(index, colIndex)} searchTerm={searchTerm} />
+                        ))}
+                    </div>
+                ))}
             </div>
-        </>
+        </div>
     );
 };
 

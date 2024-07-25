@@ -1,6 +1,7 @@
 import App from "./App";
 import ErrorPage from "./pages/ErrorPage";
 import SearchPage from "./pages/SearchPage";
+import PostPage from "./pages/PostPage";
 
 const routes = [
   {
@@ -11,6 +12,11 @@ const routes = [
   {
     path: "search",
     element: <SearchPage />,
+    errorElement: <App />,
+  },
+  {
+    path: "post",
+    element: <PostPage />,
     errorElement: <App />,
   }
 ];

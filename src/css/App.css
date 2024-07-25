@@ -8,5 +8,5 @@ html {
 }
 
 ::-webkit-scrollbar {
-    display: none;
+    display: unset;
   }

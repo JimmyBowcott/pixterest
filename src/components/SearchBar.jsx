@@ -26,8 +26,10 @@ function SearchBar() {
     const handleSearch = (e) => {
         e.preventDefault();
         if (searchTerm.trim()) {
+            const url = `/search?q=${encodeURIComponent(searchTerm).replace(/%20/g, '+')}`
             setIsActiveModal(false);
-            navigate(`/search?q=${encodeURIComponent(searchTerm)}`);
+            navigate(url);
+            window.location.href = url; // Slightly hacky refresh
         }
       };
 
