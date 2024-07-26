@@ -27,7 +27,7 @@ const getColumnCount = (w) => {
   };
 
 // WARNING: Big, ugly function below
-const SearchItems = ({loading, setLoading, searchTerm, removeIndex=false}) => {
+const SearchItems = ({loading, setLoading, searchTerm, hideIndex=false}) => {
     const [items, setItems] = useState([]);
     const [lastItems, setLastItems] = useContext(LastSearchContext);
     const [columns, setColumns] = useState([]);
@@ -63,7 +63,6 @@ const SearchItems = ({loading, setLoading, searchTerm, removeIndex=false}) => {
                     const mediaDescription = selectXPath('media:description', item).snapshotItem(0)
                     const mediaRating = selectXPath('media:rating', item).snapshotItem(0)
                     const mediaContent = selectXPath('media:content', item).snapshotItem(0)
-                    const mediaKeywords = selectXPath('media:keywords', item).snapshotItem(0)
                     const mediaCredit = selectXPath('media:credit', item);
                     const mediaCopyright = selectXPath('media:copyright', item).snapshotItem(0)
 
@@ -81,13 +80,13 @@ const SearchItems = ({loading, setLoading, searchTerm, removeIndex=false}) => {
                         src: mediaContent?.getAttribute('url') || 'N/A',
                         height: mediaContent?.getAttribute('height') || 'N/A',
                         width: mediaContent?.getAttribute('width') || 'N/A',
-                        description: parsedDescription,
+                        description: mediaDescription.textContent,
                         link: link ? link : 'N/A',
                         isAdult: mediaRating === "nonadult" ? false : true,
-                        keywords: mediaKeywords?.textContent || 'N/A',
                         author: mediaCredit?.snapshotItem(0)?.textContent || 'N/A',
                         authorIcon: mediaCredit?.snapshotItem(1)?.textContent || 'N/A',
                         copyright: mediaCopyright?.textContent || 'N/A',
+                        filename: mediaContent?.getAttribute('url')?.split('/').pop() || 'N/A',
                     };
         
                     // Add the object to the items array
@@ -105,16 +104,10 @@ const SearchItems = ({loading, setLoading, searchTerm, removeIndex=false}) => {
             } finally {
                 if (isMounted) {
 
-                    if (removeIndex) {
-                        itemsList.splice(removeIndex, 1);
-                    }
-
                     setItems(itemsList);
-                    console.log('Search items: ', itemsList);
 
-                    if (!removeIndex  && itemsList.length > 0) {
-                        setLastItems(itemsList);
-                    }
+                    setLastItems(itemsList);
+
                     setLoading(false);
             }
         }
@@ -168,7 +161,8 @@ const SearchItems = ({loading, setLoading, searchTerm, removeIndex=false}) => {
                 {columns.map((col, colIndex) => (
                     <div key={colIndex} className="flex flex-col gap-4">
                         {items.slice(getColStart(colIndex), getColStart(colIndex) + col).map((item, index) => (
-                            <SearchTile key={index} item={item} index={getTileIndex(index, colIndex)} searchTerm={searchTerm} />
+                            <SearchTile key={index} item={item} index={getTileIndex(index, colIndex)} searchTerm={searchTerm}
+                            isHidden={getTileIndex(index, colIndex) === hideIndex ? true : false} />
                         ))}
                     </div>
                 ))}

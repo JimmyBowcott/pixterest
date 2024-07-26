@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useState, useContext, useEffect } from 'react';
 import SearchItems from "../components/SearchItems";
 import Nav from "../components/Nav";
@@ -16,30 +16,60 @@ const PostPage = () => {
     const [postItem, setPostItem] = useState({});
     const query = useQuery();
     const searchTerm = encodeURIComponent(query.get('q')).replace(/%20/g, '+');
-    const index = query.get('i');
+    const index = Number(query.get('i'));
 
     useEffect(() => {
-        console.log("items: ", items);
         if (items.length > 0) {
             setPostItem(items[index])
-            console.log("item: ", postItem);
             setContextLoading(false);
         }
     }, [items, index]);
 
+    const toAuthor = () => {
+        window.open(`https://www.deviantart.com/${postItem.author}/gallery`, '_blank');
+    }
+
     return (
         <>
         <Nav showSearchBar={true}/>
-        <div className="flex flex-col items-center justify-center pt-20">
+        <div className="flex flex-col flex-wrap items-center justify-center pt-20">
             {!contextLoading && (
-            <div className="flex flex-wrap mt-4 p-4 rounded-3xl shadow-xl max-w-[1000px] w-full">
-                <img src={postItem.src} alt="" className="pixelated max-w-[500px] w-full h-auto max-h-[1000px] rounded-3xl"/>
+            <div className="flex flex-col md:flex-row mt-4 p-4 rounded-3xl shadow-xl max-w-[1000px] w-full gap-4">
+                <div className="flex-grow w-full max-w-[500px]">
+                    <img src={postItem.src} alt="" className="pixelated w-full max-h-[1000px] h-auto rounded-3xl"/>
+                </div>
+                <div className="flex flex-grow flex-col gap-4 max-w-[500px]">
+                    <div className="flex flex-row justify-between">
+                        <div className="flex flex-row gap-4">
+                            <button>
+                                <a href={postItem.src} download={postItem.filename} target="_blank">
+                                    <img src="./src/assets/icons/download.png" alt="more options" className="pixelated h-6" />
+                                </a>
+                            </button>
+                            <button>
+                                <a href={postItem.link} target="_blank">
+                                    <img src="./src/assets/icons/arrow-up-right.png" alt="follow link" className="pixelated h-6" />
+                                </a>
+                            </button>
+                        </div>
+                        <div className="flex flex-row gap-2">
+                            <button className="bg-pixterest-red hover:bg-bg-btn-p-hov text-white rounded-3xl p-2 px-4">Save</button>
+                        </div>
+                    </div>
+                    <h1 className="text-3xl font-bold">{postItem.title}</h1>
+                    <p className="text-md">{postItem.description}</p> 
+                    <div className="flex flex-row gap-2 cursor-pointer items-center" onClick={toAuthor}>
+                        <img src={postItem.authorIcon} alt="" className="h-12 w-12 rounded-full" />
+                        <p>{postItem.author}</p>
+                    </div>
+                    <p>{postItem.copyright}</p>
+                </div>
             </div>
             )}
             <h1 className="text-3xl mt-16 font-bold">More like this</h1>
 
             <div className="flex flex-row justify-center p-4">
-                <SearchItems loading={loading} setLoading={setLoading} searchTerm={searchTerm} removeIndex={index} />
+                <SearchItems loading={loading} setLoading={setLoading} searchTerm={searchTerm} hideIndex={index} />
             </div>
 
             {loading && (

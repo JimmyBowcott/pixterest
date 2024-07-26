@@ -16,7 +16,7 @@ function SearchBar() {
 
     const handleBlur = () => {
         setIsActive(false);
-        setIsActiveModal(false);
+        //setIsActiveModal(false);
     }
 
     const clearText = () => {

@@ -10,7 +10,13 @@ function useQuery() {
 const SearchPage = () => {
     const [loading, setLoading] = useState(true);
     const query = useQuery();
-    const searchTerm = encodeURIComponent(query.get('q')).replace(/%20/g, '+');
+    const [searchTerm, setSearchTerm] = useState(encodeURIComponent(query.get('q')).replace(/%20/g, '+'));
+    const location = useLocation();
+
+    useEffect(() => {
+        //const url = location.pathname + location.search;
+        //window.location.href = url; // Hack
+    }, [location.search]);
 
     useEffect(() => {
         document.body.style.overflow = "scroll";

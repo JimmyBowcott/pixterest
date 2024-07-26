@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 import Modal from "./Modal";
 import "../css/index.css"
 
-const Nav = ({showSearchBar}) => {
+const Nav = ({showSearchBar=false}) => {
     return (
       <>
         <nav className="px-6 pt-6 pb-5 flex flex-row items-center justify-between text-lg fixed top-0 w-full bg-white z-50 navbar">

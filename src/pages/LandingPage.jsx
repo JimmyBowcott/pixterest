@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import { useLocation } from 'react-router-dom'
 import Nav from '../components/Nav'
 import Homepage from './Homepage'
 import SearchSection from './SearchSection'
@@ -14,7 +13,7 @@ function LandingPage() {
   const timeoutRef = useRef(null);
 
   // Hide scrollbar
-  useEffect(() => {
+  useEffect(() => { 
     document.body.style.overflow = "hidden";
   },[]);
 
@@ -92,7 +91,7 @@ function LandingPage() {
 
   return (
     <>
-      <Nav showSearchBar={true}/>
+      <Nav />
       <section id="top" className="h-screen">
         <Homepage />
       </section>

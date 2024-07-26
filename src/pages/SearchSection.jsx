@@ -3,6 +3,7 @@ import ExploreButton from '../components/ExploreButton';
 import '../css/Section.css'
 
 const SearchSection = () => {
+      
     return (
         <div style={{padding: "5%"}} className="flex flex-row flex-wrap justify-around items-center bg-pale-yellow text-pink-red h-screen">
             <div className="relative max-h-[500px] max-w-[550px] h-full w-full">

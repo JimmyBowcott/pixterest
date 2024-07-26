@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SearchTile = ({ item, index, searchTerm }) => {
+const SearchTile = ({ item, index, searchTerm, isHidden=false }) => {
     const [isHovered, setIsHovered] = useState(false);
     const navigate = useNavigate();
 
@@ -20,14 +20,14 @@ const SearchTile = ({ item, index, searchTerm }) => {
     const handlePost = () => {
         const url = `/post?q=${searchTerm}&i=${index}`
         navigate(url);
-        window.location.href = url; // Hacky refresh v2
+        window.scrollTo(0, 0);
     };
 
     return (
         <div className="flex flex-col w-60 h-auto bg-transparent rounded-2xl gap-1 cursor-pointer"
             onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div className="relative overflow-hidden min-h-44 max-h-96 rounded-2xl">
-                {isHovered && 
+                {isHovered && !isHidden &&
                 <>
                 <div className="absolute top-0 left-0 w-full h-full rounded-2xl bg-black opacity-40"
                 onClick={handlePost}></div>
@@ -41,9 +41,17 @@ const SearchTile = ({ item, index, searchTerm }) => {
                     <p className="text-almost-black">deviantart.com</p>
                 </div>
                 </>}
+                {isHidden &&
+                    <>
+                    <div className="absolute top-0 left-0 w-full h-full rounded-2xl bg-black opacity-40"></div>
+                    <div className="flex items-center justify-center absolute top-0 left-0 w-full h-full bg-transparent">
+                        <p className="text-2xl text-white font-bold">Viewing</p>
+                    </div>
+                    </>}
+                
                 <img src={item.src} className="pixelated w-full h-full object-cover rounded-2xl" />
             </div>
-            <h2 className="text-md">{item.title} - {index}</h2>
+            <h2 className="text-md">{item.title}</h2>
         </div>
     );
 }
