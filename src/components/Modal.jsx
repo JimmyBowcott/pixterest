@@ -23,14 +23,14 @@ const PopularTile = ({src, title, page}) => {
     );
 }
 
-export const SearchModal = () => {
+export const SearchModal = ({handleClick}) => {
     const [isActive, setIsActive] = useContext(ModalContext)
     const modalRef = useRef(null)
 
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (modalRef.current && !modalRef.current.contains(event.target)) {
-                setIsActive(false);
+                handleClick(event); // A bit hacky but this calls back to the SearchBar component.
             }
         };
 
@@ -56,6 +56,8 @@ export const SearchModal = () => {
             </div>
         </div>
     );
+    //<PopularTile src="src/assets/artwork/search-bar/7.png" title="Home ideas" page="home"/>
+    //<PopularTile src="src/assets/artwork/search-bar/8.png" title="Urban nightlife" page="city"/>
 };
 
 

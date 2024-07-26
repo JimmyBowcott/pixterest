@@ -85,7 +85,7 @@ function SimpleForm() {
         setErrors(newErrors);
 
         if (valid) {
-            console.log('Form data:', formData);
+            alert('While the enthusiasm is appreciated, there is no backend here :)');
         }
     }
     

@@ -2,6 +2,7 @@ import App from "./App";
 import ErrorPage from "./pages/ErrorPage";
 import SearchPage from "./pages/SearchPage";
 import PostPage from "./pages/PostPage";
+import SavedIdeasPage from "./pages/SavedIdeasPage";
 
 const routes = [
   {
@@ -17,6 +18,11 @@ const routes = [
   {
     path: "post",
     element: <PostPage />,
+    errorElement: <App />,
+  },
+  {
+    path: "myideas",
+    element: <SavedIdeasPage />,
     errorElement: <App />,
   }
 ];

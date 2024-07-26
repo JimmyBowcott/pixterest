@@ -87,6 +87,8 @@ const SearchItems = ({loading, setLoading, searchTerm, hideIndex=false}) => {
                         authorIcon: mediaCredit?.snapshotItem(1)?.textContent || 'N/A',
                         copyright: mediaCopyright?.textContent || 'N/A',
                         filename: mediaContent?.getAttribute('url')?.split('/').pop() || 'N/A',
+                        searchTerm: searchTerm,
+                        index: i,
                     };
         
                     // Add the object to the items array
@@ -137,14 +139,6 @@ const SearchItems = ({loading, setLoading, searchTerm, hideIndex=false}) => {
         };
     }, [items]);
 
-    const getTileIndex = (index, colIndex) => {
-        let cumSum =  0;
-        for (let i = 0; i < colIndex; i++) {
-            cumSum += columns[i];
-        }
-        return index + cumSum;
-    }
-
     const getColStart = (colIndex) => {
         let cumSum =  0;
         for (let i = 0; i < colIndex; i++) {
@@ -156,17 +150,14 @@ const SearchItems = ({loading, setLoading, searchTerm, hideIndex=false}) => {
     if (loading) return null;
 
     return (
-        <div className="flex flex-col gap-4 items-center w-full mt-4">
-            <div className="flex flex-row gap-4 w-full justify-center">
-                {columns.map((col, colIndex) => (
-                    <div key={colIndex} className="flex flex-col gap-4">
-                        {items.slice(getColStart(colIndex), getColStart(colIndex) + col).map((item, index) => (
-                            <SearchTile key={index} item={item} index={getTileIndex(index, colIndex)} searchTerm={searchTerm}
-                            isHidden={getTileIndex(index, colIndex) === hideIndex ? true : false} />
-                        ))}
-                    </div>
-                ))}
-            </div>
+        <div className="flex flex-row gap-4 w-full justify-center mt-4">
+            {columns.map((col, colIndex) => (
+                <div key={colIndex} className="flex flex-col gap-4">
+                    {items.slice(getColStart(colIndex), getColStart(colIndex) + col).map((item, index) => (
+                        <SearchTile key={index} item={item} hideIndex={hideIndex}/>
+                    ))}
+                </div>
+            ))}
         </div>
     );
 };

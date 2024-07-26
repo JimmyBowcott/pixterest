@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { ModalContext } from "../components/ModalContext";
 import { SearchModal } from "../components/Modal";
 import { useNavigate } from "react-router-dom";
@@ -8,15 +8,18 @@ function SearchBar() {
     const [isActiveModal, setIsActiveModal] = useContext(ModalContext)
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
+    const searchRef = useRef(null)
 
     const handleFocus = () => {
         setIsActive(true);
         setIsActiveModal(true);
     }
 
-    const handleBlur = () => {
-        setIsActive(false);
-        //setIsActiveModal(false);
+    const handleModalClick = (event) => {
+        if (searchRef.current && !searchRef.current.contains(event.target)) {
+            setIsActive(false);
+            setIsActiveModal(false);
+        }
     }
 
     const clearText = () => {
@@ -34,7 +37,7 @@ function SearchBar() {
       };
 
     return (
-        <div className="relative flex-grow h-10 -mt-1 mr-6">
+        <div ref={searchRef} className="relative flex-grow h-10 -mt-1 mr-8">
             <img src="src/assets/icons/search-gray.png" alt="" 
             className={`pixelated absolute top-4 left-6 h-4 ${isActive ? 'w-0' : 'w-4'}`} />
             <form onSubmit={handleSearch}>
@@ -46,14 +49,13 @@ function SearchBar() {
                     className={`w-full border-none rounded-3xl ${isActive ? 'px-4' : 'px-12'} mx-2 bg-bg-btn-s-d hover:bg-bg-btn-s-hov text-lg text-gray-500`}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onFocus={handleFocus}
-                    onBlur={handleBlur}
                 />
             </form>
             <button className={`flex items-center justify-center absolute top-0 right-0 h-11 ${isActive ? 'w-11' : 'w-0'} rounded-full cursor-pointer hover:bg-gray-300 focus:shadow-none`}
             onClick={clearText}>
                 <img src="src/assets/icons/close-fill.png" alt="" className="pixelated h-5 w-5" />
             </button>
-            <SearchModal />
+            <SearchModal handleClick={handleModalClick} />
         </div>
     );
 }

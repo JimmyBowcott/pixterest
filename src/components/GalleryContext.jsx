@@ -1,7 +1,6 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext, createContext } from 'react';
 
 export const GalleryContext = createContext();
-
 
  const getGallery = () => {
     const Gallery = localStorage.getItem('Gallery');
@@ -12,7 +11,7 @@ export const GalleryContext = createContext();
     }
   };
 
-const GalleryProvider = ({ children }) => {
+export const GalleryProvider = ({ children }) => {
   const [Gallery, setGallery] = useState(getGallery);
 
     // Save to local storage
@@ -20,11 +19,19 @@ const GalleryProvider = ({ children }) => {
       localStorage.setItem('Gallery', JSON.stringify(Gallery));
     }, [Gallery]);
 
+    const handleAdd = (item) => {
+      setGallery([...Gallery, item]);
+    };
+
+    const handleDelete = (item) => {
+      setGallery(Gallery.filter((i) => i.link !== item.link));
+    };
+ 
   return (
-    <GalleryContext.Provider value={[Gallery, setGallery]}>
+    <GalleryContext.Provider value={{ Gallery, handleAdd, handleDelete }}>
       {children}
     </GalleryContext.Provider>
   );
 };
 
-export default GalleryProvider;
+export const useGallery = () => useContext(GalleryContext);

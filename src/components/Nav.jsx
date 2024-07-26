@@ -19,14 +19,16 @@ const Nav = ({showSearchBar=false}) => {
           </ul>
           </div>
           {showSearchBar && <SearchBar />}
-          <div className="flex flex-row gap-2 items-center">
+          <div className="flex flex-row gap-4 items-center">
             {!showSearchBar && <ul className="flex flex-row gap-8 mx-6">
               <li className="hover:underline"><Link to="/about">About</Link></li>
               <li className="hover:underline"><Link to="/">Business</Link></li>
               <li className="hover:underline"><Link to="/">Blog</Link></li>
             </ul>}
-            <button className="bg-pixterest-red hover:bg-bg-btn-p-hov text-white rounded-3xl p-1 px-3">Log in</button>
-            <button className="bg-bg-btn-s-d hover:bg-bg-btn-s-hov rounded-3xl p-1 px-3">Sign up</button>
+            <Link to="/myideas">
+              <button className="bg-pixterest-red hover:bg-bg-btn-p-hov text-white rounded-3xl p-1 px-3">My Ideas</button>
+            </Link>
+            {showSearchBar && <button className="bg-bg-btn-s-d hover:bg-bg-btn-s-hov text-almost-black rounded-3xl p-1 px-3">?</button>}
           </div>
       </nav>
       {showSearchBar && <Modal />}
