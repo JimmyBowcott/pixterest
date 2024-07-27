@@ -37,7 +37,7 @@ function SearchBar() {
       };
 
     return (
-        <div ref={searchRef} className="relative flex-grow h-10 -mt-1 mr-8">
+        <div ref={searchRef} className="relative flex-grow h-10 m-4 md:mr-8 md:ml-0">
             <img src="src/assets/icons/search-gray.png" alt="" 
             className={`pixelated absolute top-4 left-6 h-4 ${isActive ? 'w-0' : 'w-4'}`} />
             <form onSubmit={handleSearch}>

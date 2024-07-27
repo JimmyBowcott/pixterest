@@ -51,10 +51,10 @@ const ExplorePage = () => {
     const im1 = [407, 250];
     const im2 = [241, 110];
 
-        // Enable scroll
-        useEffect(() => {
-            document.body.style.overflow = "scroll";
-          },[]);
+    // Enable scroll
+    useEffect(() => {
+        document.body.style.overflow = "scroll";
+        },[]);
 
     return (
         <>

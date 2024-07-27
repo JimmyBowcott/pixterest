@@ -45,7 +45,7 @@ export const SearchModal = ({handleClick}) => {
     return (
         <div ref={modalRef} className="flex flex-col absolute top-14 left-2 w-full bg-white rounded-2xl p-8 text-almost-black z-50">
             <h1 className="text-md">Popular on Pixterest</h1>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 max-w-[1000px]">
                 <PopularTile src="src/assets/artwork/search-bar/1.png" title="Forest" page="forest"/>
                 <PopularTile src="src/assets/artwork/search-bar/2.png" title="Digital brushes" page="brushes"/>
                 <PopularTile src="src/assets/artwork/search-bar/3.png" title="How to draw a tree" page="tree"/>

@@ -34,44 +34,66 @@ const SearchModal = () => {
     );
 }
 
-const Nav = ({showSearchBar=false}) => {
+const Nav = ({ showSearchBar=false }) => {
   const {settings, setSettings, isActive, setIsActive} = useSettings();
+  const [isOpen, setIsOpen] = useState(false);
 
   const openSettings = () => {
     setIsActive(true)
   }
 
-    return (
-      <>
-        <nav className="px-6 pt-6 pb-5 flex flex-row items-center justify-between text-lg fixed top-0 w-full bg-white z-50 navbar">
-          <div className="flex flex-row items-center">
-            <Link to="/" className="flex items-center cursor-pointer">
-              <img src="favicon.ico" alt="" className="pixelated h-8 w-8 mr-2"/>
-              <p className="text-xl text-pixterest-red mr-4 font-bold">Pixterest</p>
-            </Link>
-            <ul className="flex flex-row gap-8 mx-4 items-center">
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <>
+      <nav className={`px-6 ${showSearchBar? 'pt-2 pb-2' : 'pt-6 pb-5'}  flex items-center justify-between text-lg fixed top-0 w-full bg-white z-50`}>
+        <button className="md:hidden" onClick={toggleMenu}>
+          <img src="./src/assets/icons/three-lines.png" className="pixelated h-4 w-4" />
+        </button>
+        <div className={`flex flex-row items-center ${showSearchBar ? 'hidden md:flex' : 'flex'}`}>
+          <Link to="/" className="flex items-center cursor-pointer">
+            <img src="favicon.ico" alt="" className="pixelated h-8 w-8 mr-2" />
+            <p className="text-xl text-pixterest-red mr-4 font-bold">Pixterest</p>
+          </Link>
+          <ul className="hidden md:flex flex-row gap-8 mx-4 items-center">
             <li className="hover:underline"><Link to="/today">Today</Link></li>
             <li className="hover:underline"><Link to="/explore">Explore</Link></li>
           </ul>
-          </div>
-          {showSearchBar && <SearchBar />}
-          <div className="flex flex-row gap-4 items-center">
-            {!showSearchBar && 
-              <button className="hover:underline"><Link to="/about">About</Link></button>
-}
-            <Link to="/myideas">
-              <button className="bg-pixterest-red hover:bg-bg-btn-p-hov text-white rounded-3xl p-1 px-3">My Ideas</button>
-            </Link>
-            <button className="bg-bg-btn-s-d hover:bg-bg-btn-s-hov text-almost-black rounded-3xl p-2"
-              onClick={openSettings}>
-              <img src="./src/assets/icons/cog1.png" className="h-6 w-6" />
-            </button>
-          </div>
+        </div>
+        {showSearchBar && <SearchBar />}
+        <div className="hidden md:flex flex-row gap-4 items-center">
+          {!showSearchBar && <button className="hover:underline"><Link to="/about">About</Link></button>}
+          <Link to="/myideas">
+            <button className="bg-pixterest-red hover:bg-bg-btn-p-hov text-white rounded-3xl p-1 px-3">My Ideas</button>
+          </Link>
+          <button className="bg-bg-btn-s-d hover:bg-bg-btn-s-hov text-almost-black rounded-3xl p-2 min-w-10 min-h-10" onClick={openSettings}>
+            <img src="./src/assets/icons/cog1.png" className="h-6 w-6" />
+          </button>
+        </div>
       </nav>
+
+      <div className={`fixed flex flex-col top-0 left-0 h-full w-64 bg-white shadow-lg transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-40`}>
+        <ul className="flex flex-col gap-8 mx-4 mt-20 items-start">
+          <li className="hover:underline"><Link to="/today" onClick={toggleMenu}>Today</Link></li>
+          <li className="hover:underline"><Link to="/explore" onClick={toggleMenu}>Explore</Link></li>
+          <li className="hover:underline"><Link to="/about" onClick={toggleMenu}>About</Link></li>
+          <li className="hover:underline"><Link to="/myideas" onClick={toggleMenu}>My Ideas</Link></li>
+          <li className="hover:underline" onClick={openSettings}><button>Settings</button></li>
+        </ul>
+        {showSearchBar &&
+        <Link to="/" className="flex items-center cursor-pointer mt-auto">
+            <img src="favicon.ico" alt="" className="pixelated h-8 w-8 m-4" />
+            <p className="text-xl text-pixterest-red mr-4 font-bold">Pixterest</p>
+        </Link>
+      }
+      </div>
+
       <Modal />
       <SearchModal />
-      </>  
-    )
-}
+    </>
+  );
+};
 
 export default Nav;

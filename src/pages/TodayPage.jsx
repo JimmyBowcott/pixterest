@@ -9,6 +9,11 @@ const Tile = ({title, src}) => {
     const width = 400;
     const height = 300;
 
+    // Enable scroll
+    useEffect(() => {
+        document.body.style.overflow = "scroll";
+        },[]);
+
     const handleMouseEnter = () => {
         setIsHovered(true);
     };

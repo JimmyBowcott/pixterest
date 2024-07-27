@@ -47,7 +47,7 @@ const SearchTile = ({ item, hideIndex=false, isSaved=false, onDelete=false}) => 
                     </div>
                     </>
                 }
-                {isHidden &&
+                {isHidden && 
                     <>
                     <div className="absolute top-0 left-0 w-full h-full rounded-2xl bg-black opacity-40"></div>
                     <div className="flex items-center justify-center absolute top-0 left-0 w-full h-full bg-transparent">

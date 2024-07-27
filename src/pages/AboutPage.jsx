@@ -1,13 +1,23 @@
+import { useEffect } from "react";
 import Nav from "../components/Nav";
 
 const AboutPage = () => {
+
+    // Enable scroll
+    useEffect(() => {
+        document.body.style.overflow = "scroll";
+        },[]);
 
     return (
         <>
         <Nav />
         <div className="flex flex-col justify-center items-center pt-28 gap-4 w-full text-center">
             <h1 className="text-3xl font-bold">Welcome to Pixterest</h1>
-            <p className="text-lg">Pixterest is the industry-leading pixel-art-only Pinterest clone.</p>
+            <p className="text-lg max-w-[1280px]">Pixterest is the industry-leading Pinterest clone, designed specifically for pixel art.<br /><br />
+            Pixterest uses DeviantArt's RSS API to fetch your favourite images and save them locally for you to use - try searching for an image, or
+            looking through the explore page to find inspiration.<br /><br />
+            This mock-up aims to improve the original features of Pinterest's site, namely its usability on mobile devices. Note that there is no
+            backend to this site so saved posts are stored locally. If you spot anything that needs fixing, please let me know :).</p>
         </div>
         </>
     )

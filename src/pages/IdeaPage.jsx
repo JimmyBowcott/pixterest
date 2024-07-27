@@ -10,6 +10,11 @@ const IdeaPage = () => {
     const { name } = useParams();
     const route = exploreRoutes.find(e => e.tag === name);
 
+    // Enable scroll
+    useEffect(() => {
+        document.body.style.overflow = "scroll";
+        },[]);
+
     useEffect (() => {
         window.scrollTo(0, 0);
     }, []);
