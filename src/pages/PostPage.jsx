@@ -1,4 +1,4 @@
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useState, useContext, useEffect } from 'react';
 import SearchItems from "../components/SearchItems";
 import Nav from "../components/Nav";
@@ -20,6 +20,11 @@ const PostPage = () => {
     const query = useQuery();
     const searchTerm = encodeURIComponent(query.get('q')).replace(/%20/g, '+');
     const index = Number(query.get('i'));
+
+    // Enable scroll
+    useEffect(() => {
+        document.body.style.overflow = "scroll";
+      },[]);
 
     useEffect(() => {
         if (items.length > 0) {
@@ -57,7 +62,7 @@ const PostPage = () => {
                 <div className="flex-grow w-full max-w-[500px]">
                     <img src={postItem.src} alt="" className="pixelated w-full max-h-[1000px] h-auto rounded-3xl"/>
                 </div>
-                <div className="flex flex-grow flex-col gap-4 max-w-[500px]">
+                <div className="flex flex-grow flex-col gap-4 max-w-[500px] overflow-hidden">
                     <div className="flex flex-row justify-between">
                         <div className="flex flex-row gap-4">
                             <button>
@@ -89,18 +94,8 @@ const PostPage = () => {
             <h1 className="text-3xl mt-16 font-bold">More like this</h1>
 
             <div className="flex flex-row justify-center p-4">
-                <SearchItems loading={loading} setLoading={setLoading} searchTerm={searchTerm} hideIndex={postItem.index} />
+                <SearchItems searchTerm={searchTerm} hideIndex={postItem.index} />
             </div>
-
-            {loading && (
-            <div className="flex flex-row justify-center items-center">
-                <div className="relative w-24 h-24">
-                    <img src="./src/assets/icons/cog1.png" alt="loading" className="pixelated spin h-20 w-20 absolute top-0 left-0 z-10" />
-                    <img src="./src/assets/icons/cog2.png" alt="loading" className="pixelated spin-anti absolute top-1 left-1"
-                    style={{width: "4.5rem", height: "4.5rem"}}/>
-                </div>
-            </div>
-        )}
         </div>
     </>
     );

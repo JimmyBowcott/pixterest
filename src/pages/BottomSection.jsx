@@ -8,8 +8,10 @@ const BottomSection = () => {
     return (
         <>
             <div className="relative z-0">
-                <div className="absolute top-0 left-0 max-h-full max-w-full z-0">
-                    <ImageArray />
+                <div className="absolute top-0 left-0 max-h-full max-w-full z-0 overflow">
+                    <div className="h-screen overflow-hidden">
+                        <ImageArray/>
+                    </div>
                 </div>
                 <div className="absolute top-0 left-0 flex flex-row justify-around items-center text-white w-full h-screen z-10" style={{background: "rgba(0, 0, 0, 0.75)"}}>
                 <div className="secText lowResHide">

@@ -2,7 +2,6 @@ import { useContext, useEffect, useRef } from 'react'
 import { ModalContext } from './ModalContext'
 import { useNavigate } from 'react-router-dom'
 
-
 const PopularTile = ({src, title, page}) => {
     const [isActive, setIsActive] = useContext(ModalContext)
     const navigate = useNavigate()
@@ -60,14 +59,13 @@ export const SearchModal = ({handleClick}) => {
     //<PopularTile src="src/assets/artwork/search-bar/8.png" title="Urban nightlife" page="city"/>
 };
 
-
 const Modal = () => {
     const [isActive, setIsActive] = useContext(ModalContext)
 
     if (!isActive) return null
 
     return (
-        <div style={{backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="z-40 h-screen w-screen absolute top-0 left-0">
+        <div className="z-40 h-screen w-screen fixed top-0 left-0 bg-black opacity-25">
         </div>
     )
 }

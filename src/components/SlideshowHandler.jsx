@@ -3,7 +3,7 @@ import Slideshow from "./Slideshow";
 import SlideshowText from "./SlideshowText";
 import SlideshowArrow from "./SlideshowArrow";
 
-const SlideshowHandler = () => {
+const SlideshowHandler = ({scrollDown}) => {
     const [index, setIndex] = useState(0);
     const colorsText = ["text-pixterest-green", "text-pixterest-purple", "text-pixterest-orange", "text-pixterest-blue"];
     const colorsBg = ["bg-pixterest-green", "bg-pixterest-purple", "bg-pixterest-orange", "bg-pixterest-blue"];
@@ -32,7 +32,7 @@ const SlideshowHandler = () => {
                     <Slideshow index={index}  />
                 </div>
             </div>
-            <SlideshowArrow index={index} colors={colorsBg}/>
+            <SlideshowArrow index={index} colors={colorsBg} scrollDown={scrollDown}/>
         </>
     )
 }

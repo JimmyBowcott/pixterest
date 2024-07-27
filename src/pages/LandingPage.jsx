@@ -42,6 +42,14 @@ function LandingPage() {
     requestAnimationFrame(animation);
   };
 
+  const handlePageDown = (event) => {
+    event.preventDefault();
+    setCurrentSection((prevSection) =>
+      prevSection < sections.length - 1 ? prevSection + 1 : prevSection
+    );
+    scrollToSection(document.getElementById(sections[currentSection + 1]), 750);
+  };
+
   // Event listeners for scrolling, a bit messy but heh
   useEffect(() => {
     const handleScroll = (event) => {
@@ -90,10 +98,10 @@ function LandingPage() {
   }, [currentSection]);
 
   return (
-    <>
+    <div className="app">
       <Nav />
       <section id="top" className="h-screen">
-        <Homepage />
+        <Homepage scrollDown={handlePageDown} />
       </section>
       <section id="search" className="h-screen z-10">
         <SearchSection />
@@ -107,7 +115,7 @@ function LandingPage() {
       <section id="bottom" className="h-screen">
         <BottomSection />
       </section>
-    </>
+    </div>
   )
 }
 
