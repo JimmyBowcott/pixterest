@@ -75,13 +75,18 @@ html, body {
     box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Example: light blue */
 }
 
-.explore-tile {
+.explore-tile-l {
     width: 407px;
     height: 250px;
 }
 
-@media (max-width: 400px) {
-    .responsive-tile {
+.explore-tile-s {
+    width: 241px;
+    height: 110px;
+}
+
+@media (max-width: 420px) {
+    .explore-tile-l {
       width: 250px;
       height: 150px;
     }

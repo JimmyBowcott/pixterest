@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Nav from "../components/Nav";
 import SearchItems from "../components/SearchItems";
 
-const ExploreTile = ({width, height, title, src, button=false, buttonText=false}) => {
+const ExploreTile = ({width, height, title, src, size="s", button=false, buttonText=false}) => {
     const [isHovered, setIsHovered] = useState(false);
     const navigate = useNavigate();
     const urlTitle = title.replace(' ', '-').toLowerCase();
@@ -21,10 +21,10 @@ const ExploreTile = ({width, height, title, src, button=false, buttonText=false}
     };
 
     return (
-        <div className="flex flex-col relative h-auto rounded-2xl gap-1 cursor-pointer"
+        <div className={`flex flex-col relative rounded-2xl gap-1 cursor-pointer ${size === "l" ? "explore-tile-l" : "explore-tile-s"}`}
             onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
             style={{backgroundImage: `url(./assets/artwork/explore/${src}.png)`, backgroundSize: "cover", backgroundPosition: "center",
-            backgroundRepeat: "no-repeat", imageRendering: "pixelated", width: width, height: height}}>
+            backgroundRepeat: "no-repeat", imageRendering: "pixelated"}}>
             <div className={`absolute top-0 left-0 w-full h-full rounded-2xl bg-black ${isHovered ? "opacity-40" : "opacity-20"}`}
             onClick={handleOpen}></div>
             { !button && 
@@ -48,7 +48,6 @@ const ExploreTile = ({width, height, title, src, button=false, buttonText=false}
 
 const ExplorePage = () => {
     const [loading, setLoading] = useState(true);
-    const dim = [241, 110];
 
     // Enable scroll
     useEffect(() => {
@@ -61,23 +60,23 @@ const ExplorePage = () => {
         <div className="flex flex-col justify-center items-center pt-32 gap-12 w-full text-center">
             <h1 className="text-4xl font-bold">Explore the best of Pixterest</h1>
             <div className="flex flex-wrap justify-center gap-2">
-                <ExploreTile className="explore-tile" title={"Dystopian Future"} src={"dystopia"} button={true} buttonText={"View More"} />
-                <ExploreTile className="explore-tile" title={"Ramen Lunch"} src={"ramen"} button={true} buttonText={"Make"} />
-                <ExploreTile className="explore-tile" title={"Night Scenes"} src={"night"} button={true} buttonText={"Try"} />
+                <ExploreTile size={"l"} title={"Dystopian Future"} src={"dystopia"} button={true} buttonText={"View More"} />
+                <ExploreTile size={"l"} title={"Ramen Lunch"} src={"ramen"} button={true} buttonText={"Make"} />
+                <ExploreTile size={"l"} title={"Night Scenes"} src={"night"} button={true} buttonText={"Try"} />
             </div>
             <div className="flex flex-col items-center justify-center gap-2">
                 <h2 className="text-2xl">Discover interests</h2>
                 <div className="flex flex-wrap justify-center gap-2 max-w-[1400px]">
-                    <ExploreTile width={dim[0]} height={dim[1]} title={"Mountains"} src={"mountains"} />
-                    <ExploreTile width={dim[0]} height={dim[1]} title={"Sports"} src={"sports"} />
-                    <ExploreTile width={dim[0]} height={dim[1]} title={"Racing"} src={"racing"} />
-                    <ExploreTile width={dim[0]} height={dim[1]} title={"Dungeon Wall"} src={"dungeon"} />
-                    <ExploreTile width={dim[0]} height={dim[1]} title={"Robot"} src={"robot"} />
-                    <ExploreTile width={dim[0]} height={dim[1]} title={"Garden Design"} src={"garden"} />
-                    <ExploreTile width={dim[0]} height={dim[1]} title={"Seaside Getaway"} src={"beach"} />
-                    <ExploreTile width={dim[0]} height={dim[1]} title={"Mario"} src={"mario"} />
-                    <ExploreTile width={dim[0]} height={dim[1]} title={"Dragons"} src={"dragon"} />
-                    <ExploreTile width={dim[0]} height={dim[1]} title={"Wallpapers"} src={"wallpaper"} />
+                    <ExploreTile title={"Mountains"} src={"mountains"} />
+                    <ExploreTile title={"Sports"} src={"sports"} />
+                    <ExploreTile title={"Racing"} src={"racing"} />
+                    <ExploreTile title={"Dungeon Wall"} src={"dungeon"} />
+                    <ExploreTile title={"Robot"} src={"robot"} />
+                    <ExploreTile title={"Garden Design"} src={"garden"} />
+                    <ExploreTile title={"Seaside Getaway"} src={"beach"} />
+                    <ExploreTile title={"Mario"} src={"mario"} />
+                    <ExploreTile title={"Dragons"} src={"dragon"} />
+                    <ExploreTile title={"Wallpapers"} src={"wallpaper"} />
                 </div>
             </div>
             <div className="flex flex-col items-center justify-center">
