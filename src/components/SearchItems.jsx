@@ -92,7 +92,7 @@ const SearchItems = ({searchTerm, hideIndex=false}) => {
                         copyright: mediaCopyright?.textContent || 'N/A',
                         filename: mediaContent?.getAttribute('url')?.split('/').pop() || 'N/A',
                         searchTerm: searchTerm,
-                        index: i,
+                        index: itemsList.length,
                     };
         
                     // Add the object to the items array
