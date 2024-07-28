@@ -11,47 +11,47 @@ import { Navigate } from "react-router-dom";
 
 const routes = [
   {
-    path: "/",
+    path: "/pixterest/",
     element: <App />,
     errorElement: <LandingPage />,
   },
   {
-    path: "search",
+    path: "/pixterest/search",
     element: <SearchPage />,
-    errorElement: <Navigate to="/" />,
+    errorElement: <Navigate to="/pixterest/" />,
   },
   {
-    path: "post",
+    path: "/pixterest/post",
     element: <PostPage />,
-    errorElement: <Navigate to="/" />,
+    errorElement: <Navigate to="/pixterest/" />,
   },
   {
-    path: "myideas",
+    path: "/pixterest/myideas",
     element: <SavedIdeasPage />,
-    errorElement: <Navigate to="/" />,
+    errorElement: <Navigate to="/pixterest/" />,
   },
-  { path: "explore",
+  { path: "/pixterest/explore",
     element: <ExplorePage />,
-    errorElement: <Navigate to="/" />,
+    errorElement: <Navigate to="/pixterest/" />,
   },
   {
-    path: "idea/:name",
+    path: "/pixterest/idea/:name",
     element: <IdeaPage />,
-    errorElement: <Navigate to="/" />,
+    errorElement: <Navigate to="/pixterest/" />,
   },
   {
-    path: "today",
+    path: "/pixterest/today",
     element: <TodayPage />,
-    errorElement: <Navigate to="/" />,
+    errorElement: <Navigate to="/pixterest/" />,
   },
   {
-    path: "about",
+    path: "/pixterest/about",
     element: <AboutPage />,
-    errorElement: <Navigate to="/" />,
+    errorElement: <Navigate to="/pixterest/" />,
   },
   {
     path: "*",
-    element: <Navigate to="/" />,
+    element: <Navigate to="/pixterest/" />,
   },
 ];
 

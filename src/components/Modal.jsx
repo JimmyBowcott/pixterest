@@ -7,7 +7,7 @@ const PopularTile = ({src, title, page}) => {
     const navigate = useNavigate()
 
     const handleSearch = () => {
-        const url = `/search?q=${encodeURIComponent(page).replace(/%20/g, '+')}`
+        const url = `/pixterest/search?q=${encodeURIComponent(page).replace(/%20/g, '+')}`
         setIsActive(false);
         navigate(url);
         window.location.href = url; // Hack

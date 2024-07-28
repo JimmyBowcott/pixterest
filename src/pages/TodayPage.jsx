@@ -23,7 +23,7 @@ const Tile = ({title, src}) => {
     };
 
     const handleOpen = () => {
-        navigate(`/idea/${urlTitle}`);
+        navigate(`/pixterest/idea/${urlTitle}`);
     };
 
     return (
