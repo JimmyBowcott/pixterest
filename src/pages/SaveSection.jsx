@@ -12,7 +12,7 @@ const SaveSection = () => {
                 <ExploreButton /> 
             </div>
             <div className="relative w-[350px] h-[350px] lg:w-[750px] lg:h-[750px] mt-16">
-                <Link to="/pixterest/search?q=autumn+forest" tabIndex="-1">
+                <Link to="/search?q=autumn+forest" tabIndex="-1">
                     <div style={{width: "55%", height: "55%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/1.png')",
                         backgroundSize: "cover"}} className="absolute cursor-pointer">
                         <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-2 lg:p-8">
@@ -27,7 +27,7 @@ const SaveSection = () => {
                         </div>
                     </div>
                 </Link>
-                <Link to="/pixterest/search?q=naruto+game" tabIndex="-1">
+                <Link to="/search?q=naruto+game" tabIndex="-1">
                 <div style={{width: "30%", height: "30%", left: "62%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/2.png')",
                     backgroundSize: "cover"}} className="absolute cursor-pointer">
                     <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-1 lg:p-4">
@@ -35,7 +35,7 @@ const SaveSection = () => {
                     </div>
                 </div>
                 </Link>
-                <Link to="/pixterest/search?q=purple+sunset" tabIndex="-1">
+                <Link to="/search?q=purple+sunset" tabIndex="-1">
                 <div style={{width: "20%", height: "20%", left: "60%", top: "38%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/3.png')",
                     backgroundSize: "cover"}} className="absolute cursor-pointer">
                     <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-0 lg:p-2">
@@ -43,7 +43,7 @@ const SaveSection = () => {
                     </div>
                 </div>
                 </Link>
-                <Link to="/pixterest/search?q=hands" tabIndex="-1">
+                <Link to="/search?q=hands" tabIndex="-1">
                 <div style={{width: "30%", height: "30%", left: "57%", top: "65%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/4.png')",
                     backgroundSize: "cover"}} className="absolute cursor-pointer">
                     <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-1 lg:p-4">
@@ -51,7 +51,7 @@ const SaveSection = () => {
                     </div>
                 </div>
                 </Link>
-                <Link to="/pixterest/search?q=windows+95" tabIndex="-1">
+                <Link to="/search?q=windows+95" tabIndex="-1">
                 <div style={{width: "30%", height: "30%", left: "18%", top: "62%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/5.png')",
                     backgroundSize: "cover"}} className="absolute cursor-pointer">
                     <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-1 lg:p-4">

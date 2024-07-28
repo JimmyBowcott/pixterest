@@ -1,26 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { useNavigate, createBrowserRouter, RouterProvider } from "react-router-dom";
-import routes from "./routes";
+import { HashRouter as Router } from "react-router-dom";
 import { GalleryProvider } from './components/GalleryContext'
 import ModalProvider from './components/ModalContext'
 import LastSearchProvider from './components/LastSearchContext'
 import { SettingsProvider } from './components/SettingsContext'
-
-const router = createBrowserRouter(routes);
-
-const RedirectHandler = ({ children }) => {
-  const navigate = useNavigate();
-
-  React.useEffect(() => {
-    const path = window.location.search.substring(1);
-    if (path) {
-      navigate(path, { replace: true });
-    }
-  }, [navigate]);
-
-  return <>{children}</>;
-};
+import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -28,7 +13,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <GalleryProvider>
         <ModalProvider>
           <LastSearchProvider>
-            <RouterProvider router={router} />
+            <Router>
+              <App />
+            </Router>
           </LastSearchProvider>
         </ModalProvider>
       </GalleryProvider>

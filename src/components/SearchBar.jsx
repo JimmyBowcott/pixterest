@@ -29,7 +29,7 @@ function SearchBar() {
     const handleSearch = (e) => {
         e.preventDefault();
         if (searchTerm.trim()) {
-            const url = `/pixterest/search?q=${encodeURIComponent(searchTerm).replace(/%20/g, '+')}`
+            const url = `/search?q=${encodeURIComponent(searchTerm).replace(/%20/g, '+')}`
             setIsActiveModal(false);
             navigate(url);
             window.location.href = url; // Slightly hacky refresh

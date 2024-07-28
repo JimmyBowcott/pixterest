@@ -17,7 +17,7 @@ const ExploreTile = ({width, height, title, src, button=false, buttonText=false}
     };
 
     const handleOpen = () => {
-        navigate(`/pixterest/idea/${urlTitle}`);
+        navigate(`/idea/${urlTitle}`);
     };
 
     return (

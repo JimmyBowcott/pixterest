@@ -7,7 +7,7 @@ const SearchSection = () => {
         return (
           <div className="flex flex-wrap justify-around items-center bg-pale-yellow text-pink-red h-screen pt-20 px-6 md:px-10 lg:px-20">
             <div className="relative max-h-[450px] max-w-[400px] lg:max-h-[570px] lg:max-w-[550px] h-full w-full -mt-24 -mr-20 lg:mt-0 flex-shrink-0">
-                <Link to="/pixterest/search?q=home office" tabIndex="-1">
+                <Link to="/search?q=home office" tabIndex="-1">
                     <div className="absolute top-40 left-1/4 h-12 w-60 md:h-20 md:w-60 bg-white rounded-full z-30 flex flex-row items-center gap-4 px-6">
                         <img src="./assets/icons/search.png" className="pixelated h-6" alt="" />
                         <p className="text-2xl text-almost-black">home office</p>
