@@ -37,6 +37,7 @@ const SearchItems = ({searchTerm, hideIndex=false}) => {
 
     // Fetch data from DeviantArt API
     useEffect(() => {
+        setLoading(true);
         let isMounted = true;
         let itemsList = [];
 
@@ -128,7 +129,7 @@ const SearchItems = ({searchTerm, hideIndex=false}) => {
         isMounted = false;
     };
 
-    }, []);
+    }, [searchTerm]);
 
     // Update column count based on window size
     useEffect(() => {

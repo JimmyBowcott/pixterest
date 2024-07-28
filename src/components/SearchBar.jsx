@@ -32,7 +32,7 @@ function SearchBar() {
             const url = `/pixterest/#/search?q=${encodeURIComponent(searchTerm).replace(/%20/g, '+')}`
             setIsActiveModal(false);
             navigate(url);
-            window.location.href = url; // Slightly hacky refresh - this caused me a lot of pain. Note to self... Avoid hacky redirects.
+            window.location.href = url; // Slightly hacky refresh
         }
       };
 

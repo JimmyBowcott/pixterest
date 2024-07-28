@@ -13,9 +13,7 @@ const SearchPage = () => {
     const location = useLocation();
 
     useEffect(() => {
-        //const url = location.pathname + location.search;
-        //window.location.href = url; // Hack
-        console.log(window.location.pathname)
+        setSearchTerm(encodeURIComponent(query.get('q')).replace(/%20/g, '+'))
     }, [location.search]);
 
     // Enable scroll
