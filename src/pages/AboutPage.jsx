@@ -16,9 +16,12 @@ const AboutPage = () => {
             <p className="text-lg max-w-[1280px] px-4">Pixterest is the industry-leading Pinterest clone, designed specifically for pixel art.<br /><br />
             Pixterest uses DeviantArt's RSS API to fetch your favourite images and save them locally for you to use - try searching for an image, or
             looking through the explore page to find inspiration.<br /><br />
-            This mock-up aims to improve the original features of Pinterest's site, namely its usability on mobile devices. This site is designed to be
-            completely responsive, and usable at every screen size (bar extremes). Note that there is no
+            This site is designed to be fully responsive and usable at every screen size (bar extremes). Note that there is no
             backend to this site so saved posts are stored locally. If you spot anything that needs fixing, please let me know :).</p>
+            <h2 className="text-2xl font-bold">Site demo</h2>
+            <video controls className="max-w-[750px] max-h-[500px] w-full h-auto"> 
+                <source src="./assets/videos/demo.mp4" type="video/mp4" />
+            </video>
         </div>
         </>
     )
