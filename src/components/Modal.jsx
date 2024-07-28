@@ -46,17 +46,17 @@ export const SearchModal = ({handleClick}) => {
         <div ref={modalRef} className="flex flex-col absolute top-14 left-2 w-full bg-white rounded-2xl p-8 text-almost-black z-50">
             <h1 className="text-md">Popular on Pixterest</h1>
             <div className="flex flex-wrap gap-2 max-w-[1000px]">
-                <PopularTile src="pixterest/assets/artwork/search-bar/1.png" title="Forest" page="forest"/>
-                <PopularTile src="pixterest/assets/artwork/search-bar/2.png" title="Digital brushes" page="brushes"/>
-                <PopularTile src="pixterest/assets/artwork/search-bar/3.png" title="How to draw a tree" page="tree"/>
-                <PopularTile src="pixterest/assets/artwork/search-bar/4.png" title="Naruto" page="naruto"/>
-                <PopularTile src="pixterest/assets/artwork/search-bar/5.png" title="Icon packs" page="icons"/>
-                <PopularTile src="pixterest/assets/artwork/search-bar/6.png" title="Desert" page="desert"/>
+                <PopularTile src="assets/artwork/search-bar/1.png" title="Forest" page="forest"/>
+                <PopularTile src="assets/artwork/search-bar/2.png" title="Digital brushes" page="brushes"/>
+                <PopularTile src="assets/artwork/search-bar/3.png" title="How to draw a tree" page="tree"/>
+                <PopularTile src="assets/artwork/search-bar/4.png" title="Naruto" page="naruto"/>
+                <PopularTile src="assets/artwork/search-bar/5.png" title="Icon packs" page="icons"/>
+                <PopularTile src="assets/artwork/search-bar/6.png" title="Desert" page="desert"/>
             </div>
         </div>
     );
-    //<PopularTile src="pixterest/assets/artwork/search-bar/7.png" title="Home ideas" page="home"/>
-    //<PopularTile src="pixterest/assets/artwork/search-bar/8.png" title="Urban nightlife" page="city"/>
+    //<PopularTile src="assets//artwork/search-bar/7.png" title="Home ideas" page="home"/>
+    //<PopularTile src="assets//artwork/search-bar/8.png" title="Urban nightlife" page="city"/>
 };
 
 const Modal = () => {

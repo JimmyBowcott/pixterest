@@ -38,7 +38,7 @@ function SearchBar() {
 
     return (
         <div ref={searchRef} className="relative flex-grow h-10 m-4 md:mr-8 md:ml-0">
-            <img src="/pixterest/assets/icons/search-gray.png" alt="" 
+            <img src="/assets/icons/search-gray.png" alt="" 
             className={`pixelated absolute top-4 left-6 h-4 ${isActive ? 'w-0' : 'w-4'}`} />
             <form onSubmit={handleSearch}>
                 <input
@@ -53,7 +53,7 @@ function SearchBar() {
             </form>
             <button className={`flex items-center justify-center absolute top-0 right-0 h-11 ${isActive ? 'w-11' : 'w-0'} rounded-full cursor-pointer hover:bg-gray-300 focus:shadow-none`}
             onClick={clearText}>
-                <img src="/pixterest/assets/icons/close-fill.png" alt="" className="pixelated h-5 w-5" />
+                <img src="/assets/icons/close-fill.png" alt="" className="pixelated h-5 w-5" />
             </button>
             <SearchModal handleClick={handleModalClick} />
         </div>

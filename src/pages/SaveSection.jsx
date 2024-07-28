@@ -13,14 +13,14 @@ const SaveSection = () => {
             </div>
             <div className="relative w-[350px] h-[350px] lg:w-[750px] lg:h-[750px] mt-16">
                 <Link to="/search?q=autumn+forest" tabIndex="-1">
-                    <div style={{width: "55%", height: "55%", borderRadius: "10%", backgroundImage: "url('pixterest/assets/artwork/save/1.png')",
+                    <div style={{width: "55%", height: "55%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/1.png')",
                         backgroundSize: "cover"}} className="absolute cursor-pointer">
                         <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-2 lg:p-8">
                             <div className="self-end flex flex-col-reverse h-3/4 w-full gap-4">
                             <div className="hidden lg:flex h-1/2 w-full gap-6">
-                                <img src="pixterest/assets/artwork/save/1-1.png" className="pixelated h-full w-auto rounded-xl"/>
-                                <img src="pixterest/assets/artwork/save/1-2.png" className="pixelated h-full w-auto rounded-xl"/>
-                                <img src="pixterest/assets/artwork/save/1-3.png" className="pixelated h-full w-auto rounded-xl"/>
+                                <img src="assets/artwork/save/1-1.png" className="pixelated h-full w-auto rounded-xl"/>
+                                <img src="assets/artwork/save/1-2.png" className="pixelated h-full w-auto rounded-xl"/>
+                                <img src="assets/artwork/save/1-3.png" className="pixelated h-full w-auto rounded-xl"/>
                             </div>
                             <h2 className="text-6xl text-white ml-2">Autumn forest</h2>
                             </div>
@@ -28,7 +28,7 @@ const SaveSection = () => {
                     </div>
                 </Link>
                 <Link to="/search?q=naruto+game" tabIndex="-1">
-                <div style={{width: "30%", height: "30%", left: "62%", borderRadius: "10%", backgroundImage: "url('pixterest/assets/artwork/save/2.png')",
+                <div style={{width: "30%", height: "30%", left: "62%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/2.png')",
                     backgroundSize: "cover"}} className="absolute cursor-pointer">
                     <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-1 lg:p-4">
                         <h2 className="self-end text-4xl text-white ml-2">Naruto game</h2>
@@ -36,7 +36,7 @@ const SaveSection = () => {
                 </div>
                 </Link>
                 <Link to="/search?q=purple+sunset" tabIndex="-1">
-                <div style={{width: "20%", height: "20%", left: "60%", top: "38%", borderRadius: "10%", backgroundImage: "url('pixterest/assets/artwork/save/3.png')",
+                <div style={{width: "20%", height: "20%", left: "60%", top: "38%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/3.png')",
                     backgroundSize: "cover"}} className="absolute cursor-pointer">
                     <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-0 lg:p-2">
                         <h2 className="self-end text-md md:text-2xl text-white ml-2">Purple sunset</h2>
@@ -44,7 +44,7 @@ const SaveSection = () => {
                 </div>
                 </Link>
                 <Link to="/search?q=hands" tabIndex="-1">
-                <div style={{width: "30%", height: "30%", left: "57%", top: "65%", borderRadius: "10%", backgroundImage: "url('pixterest/assets/artwork/save/4.png')",
+                <div style={{width: "30%", height: "30%", left: "57%", top: "65%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/4.png')",
                     backgroundSize: "cover"}} className="absolute cursor-pointer">
                     <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-1 lg:p-4">
                         <h2 className="self-end text-4xl text-white ml-2">Hand shapes</h2>
@@ -52,7 +52,7 @@ const SaveSection = () => {
                 </div>
                 </Link>
                 <Link to="/search?q=windows+95" tabIndex="-1">
-                <div style={{width: "30%", height: "30%", left: "18%", top: "62%", borderRadius: "10%", backgroundImage: "url('pixterest/assets/artwork/save/5.png')",
+                <div style={{width: "30%", height: "30%", left: "18%", top: "62%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/5.png')",
                     backgroundSize: "cover"}} className="absolute cursor-pointer">
                     <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-1 lg:p-4">
                         <h2 className="self-end text-4xl text-white ml-2">Windows 95</h2>

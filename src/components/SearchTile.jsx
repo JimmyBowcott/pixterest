@@ -42,7 +42,7 @@ const SearchTile = ({ item, hideIndex=false, isSaved=false, onDelete=false}) => 
                     </div>
                     <div className="flex items-center gap-2 absolute bottom-4 left-4 rounded-3xl p-1 px-3 bg-white opacity-90 hover:opacity-100"
                     onClick={handleOpen}>
-                        <img src="pixterest/assets/icons/arrow-up-right.png" className="pixelated h-3 w-3" />
+                        <img src="assets/icons/arrow-up-right.png" className="pixelated h-3 w-3" />
                         <p className="text-almost-black">deviantart.com</p>
                     </div>
                     </>
@@ -65,7 +65,7 @@ const SearchTile = ({ item, hideIndex=false, isSaved=false, onDelete=false}) => 
                     </div>
                     <button className="flex items-center gap-2 absolute bottom-2 right-2 p-3 opacity-90 hover:opacity-100 cursor-pointer"
                     alt="Delete" onClick={handleDeleteClick}>
-                        <img src="pixterest/assets/icons/bin.png" className="pixelated h-6 w-auto" />
+                        <img src="assets/icons/bin.png" className="pixelated h-6 w-auto" />
                     </button>
                     </>
                 }
