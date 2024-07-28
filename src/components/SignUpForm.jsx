@@ -112,7 +112,7 @@ function SimpleForm() {
             </div>
             <div className="relative">
                 <label htmlFor="password">Password</label>
-                <img src="./pixterest/assets/icons/eye.png" className="pixelated h-3 absolute top-11 right-3 cursor-pointer" alt="" onClick={togglePasswordVisibility}/>
+                <img src="./assets/icons/eye.png" className="pixelated h-3 absolute top-11 right-3 cursor-pointer" alt="" onClick={togglePasswordVisibility}/>
                 <input
                     type={passwordIsVisible ? 'text' : 'password'}
                     id="password"
