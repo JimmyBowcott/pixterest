@@ -11,6 +11,8 @@ function LandingPage() {
   const [isScrolling, setIsScrolling] = useState(false);
   const sections = ['top', 'search', 'save', 'shop', 'bottom'];
   const timeoutRef = useRef(null);
+  const touchStartY = useRef(0);
+  const touchEndY = useRef(0);
 
   // Hide scrollbar
   useEffect(() => { 
