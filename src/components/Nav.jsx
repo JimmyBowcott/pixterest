@@ -50,7 +50,7 @@ const Nav = ({ showSearchBar=false }) => {
     <>
       <nav className={`px-6 ${showSearchBar? 'pt-2 pb-2' : 'pt-6 pb-5'}  flex items-center justify-between text-lg fixed top-0 w-full bg-white z-50`}>
         <button className="md:hidden" onClick={toggleMenu}>
-          <img src=".//assets/icons/three-lines.png" className="pixelated h-4 w-4" />
+          <img src="/pixterest/assets/icons/three-lines.png" className="pixelated h-4 w-4" />
         </button>
         <div className={`flex flex-row items-center ${showSearchBar ? 'hidden md:flex' : 'flex'}`}>
           <Link to="/" className="flex items-center cursor-pointer">
@@ -69,7 +69,7 @@ const Nav = ({ showSearchBar=false }) => {
             <button className="bg-pixterest-red hover:bg-bg-btn-p-hov text-white rounded-3xl p-1 px-3">My Ideas</button>
           </Link>
           <button className="bg-bg-btn-s-d hover:bg-bg-btn-s-hov text-almost-black rounded-3xl p-2 min-w-10 min-h-10" onClick={openSettings}>
-            <img src=".//assets/icons/cog1.png" className="h-6 w-6" />
+            <img src=".//pixterest/assets/icons/cog1.png" className="h-6 w-6" />
           </button>
         </div>
       </nav>
