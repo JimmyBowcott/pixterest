@@ -28,9 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <GalleryProvider>
         <ModalProvider>
           <LastSearchProvider>
-            <RouterProvider router={router}>
-              <RedirectHandler />
-            </RouterProvider>
+            <RouterProvider router={router} />
           </LastSearchProvider>
         </ModalProvider>
       </GalleryProvider>
