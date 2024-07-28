@@ -48,8 +48,7 @@ const ExploreTile = ({width, height, title, src, button=false, buttonText=false}
 
 const ExplorePage = () => {
     const [loading, setLoading] = useState(true);
-    const im1 = [407, 250];
-    const im2 = [241, 110];
+    const dim = [241, 110];
 
     // Enable scroll
     useEffect(() => {
@@ -62,23 +61,23 @@ const ExplorePage = () => {
         <div className="flex flex-col justify-center items-center pt-32 gap-12 w-full text-center">
             <h1 className="text-4xl font-bold">Explore the best of Pixterest</h1>
             <div className="flex flex-wrap justify-center gap-2">
-                <ExploreTile width={im1[0]} height={im1[1]} title={"Dystopian Future"} src={"dystopia"} button={true} buttonText={"View More"} />
-                <ExploreTile width={im1[0]} height={im1[1]} title={"Ramen Lunch"} src={"ramen"} button={true} buttonText={"Make"} />
-                <ExploreTile width={im1[0]} height={im1[1]} title={"Night Scenes"} src={"night"} button={true} buttonText={"Try"} />
+                <ExploreTile className="explore-tile" title={"Dystopian Future"} src={"dystopia"} button={true} buttonText={"View More"} />
+                <ExploreTile className="explore-tile" title={"Ramen Lunch"} src={"ramen"} button={true} buttonText={"Make"} />
+                <ExploreTile className="explore-tile" title={"Night Scenes"} src={"night"} button={true} buttonText={"Try"} />
             </div>
             <div className="flex flex-col items-center justify-center gap-2">
                 <h2 className="text-2xl">Discover interests</h2>
                 <div className="flex flex-wrap justify-center gap-2 max-w-[1400px]">
-                    <ExploreTile width={im2[0]} height={im2[1]} title={"Mountains"} src={"mountains"} />
-                    <ExploreTile width={im2[0]} height={im2[1]} title={"Sports"} src={"sports"} />
-                    <ExploreTile width={im2[0]} height={im2[1]} title={"Racing"} src={"racing"} />
-                    <ExploreTile width={im2[0]} height={im2[1]} title={"Dungeon Wall"} src={"dungeon"} />
-                    <ExploreTile width={im2[0]} height={im2[1]} title={"Robot"} src={"robot"} />
-                    <ExploreTile width={im2[0]} height={im2[1]} title={"Garden Design"} src={"garden"} />
-                    <ExploreTile width={im2[0]} height={im2[1]} title={"Seaside Getaway"} src={"beach"} />
-                    <ExploreTile width={im2[0]} height={im2[1]} title={"Mario"} src={"mario"} />
-                    <ExploreTile width={im2[0]} height={im2[1]} title={"Dragons"} src={"dragon"} />
-                    <ExploreTile width={im2[0]} height={im2[1]} title={"Wallpapers"} src={"wallpaper"} />
+                    <ExploreTile width={dim[0]} height={dim[1]} title={"Mountains"} src={"mountains"} />
+                    <ExploreTile width={dim[0]} height={dim[1]} title={"Sports"} src={"sports"} />
+                    <ExploreTile width={dim[0]} height={dim[1]} title={"Racing"} src={"racing"} />
+                    <ExploreTile width={dim[0]} height={dim[1]} title={"Dungeon Wall"} src={"dungeon"} />
+                    <ExploreTile width={dim[0]} height={dim[1]} title={"Robot"} src={"robot"} />
+                    <ExploreTile width={dim[0]} height={dim[1]} title={"Garden Design"} src={"garden"} />
+                    <ExploreTile width={dim[0]} height={dim[1]} title={"Seaside Getaway"} src={"beach"} />
+                    <ExploreTile width={dim[0]} height={dim[1]} title={"Mario"} src={"mario"} />
+                    <ExploreTile width={dim[0]} height={dim[1]} title={"Dragons"} src={"dragon"} />
+                    <ExploreTile width={dim[0]} height={dim[1]} title={"Wallpapers"} src={"wallpaper"} />
                 </div>
             </div>
             <div className="flex flex-col items-center justify-center">

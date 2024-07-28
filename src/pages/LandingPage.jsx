@@ -50,6 +50,42 @@ function LandingPage() {
     scrollToSection(document.getElementById(sections[currentSection + 1]), 750);
   };
 
+  const handleTouchStart = (event) => {
+    touchStartY.current = event.touches[0].clientY;
+  };
+
+  const handleTouchMove = (event) => {
+    touchEndY.current = event.touches[0].clientY;
+  };
+
+  const handleTouchEnd = () => {
+    if (!isScrolling) {
+      if (touchStartY.current - touchEndY.current > 50) {
+        // Scrolling down
+        setCurrentSection((prevSection) =>
+          prevSection < sections.length - 1 ? prevSection + 1 : prevSection
+        );
+      } else if (touchEndY.current - touchStartY.current > 50) {
+        // Scrolling up
+        setCurrentSection((prevSection) =>
+          prevSection > 0 ? prevSection - 1 : prevSection
+        );
+      }
+
+      // Set isScrolling to true
+      setIsScrolling(true);
+
+      // Clear the previous timeout if it exists
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
+      timeoutRef.current = setTimeout(() => {
+        setIsScrolling(false);
+      }, 750);
+    }
+  };
+
   // Event listeners for scrolling, a bit messy but heh
   useEffect(() => {
     const handleScroll = (event) => {
@@ -82,10 +118,16 @@ function LandingPage() {
     };
 
     window.addEventListener('wheel', handleScroll);
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('touchend', handleTouchEnd);
 
     // Clean up the event listener
     return () => {
       window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
   }, [isScrolling]);
 
