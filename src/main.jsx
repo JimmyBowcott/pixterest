@@ -9,7 +9,7 @@ import { SettingsProvider } from './components/SettingsContext'
 
 const router = createBrowserRouter(routes);
 
-const App = () => {
+const RedirectHandler = ({ children }) => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -19,9 +19,7 @@ const App = () => {
     }
   }, [navigate]);
 
-  return (
-    <RouterProvider router={router} />
-  );
+  return <>{children}</>;
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -30,7 +28,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <GalleryProvider>
         <ModalProvider>
           <LastSearchProvider>
-            <App />
+            <RouterProvider router={router}>
+              <RedirectHandler />
+            </RouterProvider>
           </LastSearchProvider>
         </ModalProvider>
       </GalleryProvider>
