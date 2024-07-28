@@ -1,4 +1,3 @@
-import App from "./App";
 import LandingPage from "./pages/LandingPage";
 import SearchPage from "./pages/SearchPage";
 import PostPage from "./pages/PostPage";
