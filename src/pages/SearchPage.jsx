@@ -15,6 +15,7 @@ const SearchPage = () => {
     useEffect(() => {
         //const url = location.pathname + location.search;
         //window.location.href = url; // Hack
+        console.log(window.location.pathname)
     }, [location.search]);
 
     // Enable scroll
