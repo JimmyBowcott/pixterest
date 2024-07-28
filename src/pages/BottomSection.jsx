@@ -26,11 +26,11 @@ const BottomSection = () => {
                     <GoogleButton />
                     <div className="flex flex-col justify-center items-center max-w-64 text-xs text-center gap-2 mt-2">
                         <p className="text-gray-500">By continuing you agree to Pixterest's 
-                        <Link to="/" className="text-almost-black font-bold hover:underline"> Terms of Service </Link> 
+                        <Link to="/pixterest/" className="text-almost-black font-bold hover:underline"> Terms of Service </Link> 
                         and acknowledge that you have read our 
-                        <Link to="/" className="text-almost-black font-bold hover:underline"> Privacy Policy</Link>.
-                        <Link to="/" className="text-almost-black font-bold hover:underline"> Notice at collection</Link>.</p>
-                        <p>Already a member? <Link to="/" className="font-bold">Log in</Link></p>
+                        <Link to="/pixterest/" className="text-almost-black font-bold hover:underline"> Privacy Policy</Link>.
+                        <Link to="/pixterest/" className="text-almost-black font-bold hover:underline"> Notice at collection</Link>.</p>
+                        <p>Already a member? <Link to="/pixterest/" className="font-bold">Log in</Link></p>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@ const SearchTile = ({ item, hideIndex=false, isSaved=false, onDelete=false}) => 
     };
 
     const handlePost = () => {
-        const url = `/post?q=${item.searchTerm}&i=${item.index}`
+        const url = `/pixterest/post?q=${item.searchTerm}&i=${item.index}`
         navigate(url);
         window.scrollTo(0, 0);
     };
