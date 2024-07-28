@@ -7,8 +7,8 @@ const SaveSection = () => {
     return (
         <div className="flex flex-row flex-wrap justify-around items-center bg-pale-blue text-dark-teal h-screen secText p-4 pt-24 pb-4">
             <div className="flex flex-col justify-center items-center text-center max-w-full md:max-w-[50%] lg:max-w-[40%]">
-                <h1 className="text-4xl md:text-5xl font-bold" style={{marginBottom: "3%"}}>Save ideas you like</h1>
-                <p className="text-xl  max-w-md" style={{marginBottom: "3%"}}>Collect your favourites so you can get back to them later.</p>
+                <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold" style={{marginBottom: "3%"}}>Save ideas you like</h1>
+                <p className="text-md sm:text-xl  max-w-md" style={{marginBottom: "3%"}}>Collect your favourites so you can get back to them later.</p>
                 <ExploreButton /> 
             </div>
             <div className="relative w-[350px] h-[350px] lg:w-[750px] lg:h-[750px] mt-16">
@@ -45,7 +45,7 @@ const SaveSection = () => {
                 </Link>
                 <Link to="/search?q=hands" tabIndex="-1">
                 <div style={{width: "30%", height: "30%", left: "57%", top: "65%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/4.png')",
-                    backgroundSize: "cover"}} className="absolute cursor-pointer">
+                    backgroundSize: "cover"}} className="absolute cursor-pointer hidden sm:block">
                     <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-1 lg:p-4">
                         <h2 className="self-end text-4xl text-white ml-2">Hand shapes</h2>
                     </div>
@@ -53,7 +53,7 @@ const SaveSection = () => {
                 </Link>
                 <Link to="/search?q=windows+95" tabIndex="-1">
                 <div style={{width: "30%", height: "30%", left: "18%", top: "62%", borderRadius: "10%", backgroundImage: "url('assets/artwork/save/5.png')",
-                    backgroundSize: "cover"}} className="absolute cursor-pointer">
+                    backgroundSize: "cover"}} className="absolute cursor-pointer hidden sm:block">
                     <div style={{borderRadius: "10%", backgroundColor: "rgb(0, 0, 0, 0.25)"}} className="h-full w-full flex p-1 lg:p-4">
                         <h2 className="self-end text-4xl text-white ml-2">Windows 95</h2>
                     </div>
