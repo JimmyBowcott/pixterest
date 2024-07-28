@@ -157,8 +157,8 @@ const SearchItems = ({searchTerm, hideIndex=false}) => {
     if (loading) return (
         <div className="flex flex-row justify-center items-center">
             <div className="relative w-24 h-24">
-                <img src="/assets/icons/cog1.png" alt="loading" className="pixelated spin h-20 w-20 absolute top-0 left-0 z-10" />
-                <img src="/assets/icons/cog2.png" alt="loading" className="pixelated spin-anti absolute top-1 left-1"
+                <img src="./assets/icons/cog1.png" alt="loading" className="pixelated spin h-20 w-20 absolute top-0 left-0 z-10" />
+                <img src="./assets/icons/cog2.png" alt="loading" className="pixelated spin-anti absolute top-1 left-1"
                 style={{width: "4.5rem", height: "4.5rem"}}/>
             </div>
         </div>

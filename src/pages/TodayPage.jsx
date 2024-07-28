@@ -61,7 +61,7 @@ const TodayPage = () => {
   
             </div>
             <div className="flex flex-col items-center justify-center mt-12 mb-8">
-                <img src="assets/icons/tick.png" className="pixelated w-8 h-8 mb-4"/>
+                <img src="./assets/icons/tick.png" className="pixelated w-8 h-8 mb-4"/>
                 <p className="text-lg">That's it for today!</p>
                 <p className="text-lg font-bold">Come back for more inspiration</p>
             </div>

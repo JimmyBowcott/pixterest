@@ -23,7 +23,7 @@ const SearchTile = ({ item, hideIndex=false, isSaved=false, onDelete=false}) => 
     };
 
     const handlePost = () => {
-        const url = `/pixterest/post?q=${item.searchTerm}&i=${item.index}`
+        const url = `/post?q=${item.searchTerm}&i=${item.index}`
         navigate(url);
         window.scrollTo(0, 0);
     };
@@ -42,7 +42,7 @@ const SearchTile = ({ item, hideIndex=false, isSaved=false, onDelete=false}) => 
                     </div>
                     <div className="flex items-center gap-2 absolute bottom-4 left-4 rounded-3xl p-1 px-3 bg-white opacity-90 hover:opacity-100"
                     onClick={handleOpen}>
-                        <img src="assets/icons/arrow-up-right.png" className="pixelated h-3 w-3" />
+                        <img src="./assets/icons/arrow-up-right.png" className="pixelated h-3 w-3" />
                         <p className="text-almost-black">deviantart.com</p>
                     </div>
                     </>
