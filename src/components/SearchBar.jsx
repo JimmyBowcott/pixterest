@@ -29,10 +29,10 @@ function SearchBar() {
     const handleSearch = (e) => {
         e.preventDefault();
         if (searchTerm.trim()) {
-            const url = `/search?q=${encodeURIComponent(searchTerm).replace(/%20/g, '+')}`
+            const url = `/pixterest/#/search?q=${encodeURIComponent(searchTerm).replace(/%20/g, '+')}`
             setIsActiveModal(false);
             navigate(url);
-            window.location.href = url; // Slightly hacky refresh
+            window.location.href = url; // Slightly hacky refresh - this caused me a lot of pain. Note to self... Avoid hacky redirects.
         }
       };
 
