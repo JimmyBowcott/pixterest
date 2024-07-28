@@ -29,7 +29,7 @@ const Tile = ({title, src}) => {
     return (
         <div className="flex flex-col relative h-auto rounded-2xl gap-1 cursor-pointer"
             onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
-            style={{backgroundImage: `url(./src/assets/artwork/today/${src}.png)`, backgroundSize: "cover", backgroundPosition: "center",
+            style={{backgroundImage: `url(./assets/artwork/today/${src}.png)`, backgroundSize: "cover", backgroundPosition: "center",
             backgroundRepeat: "no-repeat", imageRendering: "pixelated", width: width, height: height}}>
             <div className={`absolute top-0 left-0 w-full h-full rounded-2xl bg-black ${isHovered ? "opacity-40" : "opacity-20"}`}
             onClick={handleOpen}></div>
@@ -61,7 +61,7 @@ const TodayPage = () => {
   
             </div>
             <div className="flex flex-col items-center justify-center mt-12 mb-8">
-                <img src="src/assets/icons/tick.png" className="pixelated w-8 h-8 mb-4"/>
+                <img src="assets/icons/tick.png" className="pixelated w-8 h-8 mb-4"/>
                 <p className="text-lg">That's it for today!</p>
                 <p className="text-lg font-bold">Come back for more inspiration</p>
             </div>

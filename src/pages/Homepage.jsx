@@ -10,7 +10,7 @@ const Homepage = ({scrollDown}) => {
             <div className="h-14 flex items-center justify-center bg-pale-yellow absolute bottom-0 right-0 w-full">
                 <div className="flex items-center gap-2" onClick={scrollDown}>
                     <p className="cursor-pointer">Here's how it works</p>
-                    <img src="./src/assets/icons/arrow-down.png" className="h-2 pixelated cursor-pointer" alt="" />
+                    <img src="./assets/icons/arrow-down.png" className="h-2 pixelated cursor-pointer" alt="" />
                 </div>
             </div>
         </>

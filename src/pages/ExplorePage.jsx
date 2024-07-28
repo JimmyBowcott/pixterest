@@ -23,7 +23,7 @@ const ExploreTile = ({width, height, title, src, button=false, buttonText=false}
     return (
         <div className="flex flex-col relative h-auto rounded-2xl gap-1 cursor-pointer"
             onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
-            style={{backgroundImage: `url(./src/assets/artwork/explore/${src}.png)`, backgroundSize: "cover", backgroundPosition: "center",
+            style={{backgroundImage: `url(./assets/artwork/explore/${src}.png)`, backgroundSize: "cover", backgroundPosition: "center",
             backgroundRepeat: "no-repeat", imageRendering: "pixelated", width: width, height: height}}>
             <div className={`absolute top-0 left-0 w-full h-full rounded-2xl bg-black ${isHovered ? "opacity-40" : "opacity-20"}`}
             onClick={handleOpen}></div>

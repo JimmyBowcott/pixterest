@@ -7,7 +7,9 @@ import ModalProvider from './components/ModalContext'
 import LastSearchProvider from './components/LastSearchContext'
 import { SettingsProvider } from './components/SettingsContext'
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, {
+  basename: "/pixterest",
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -44,16 +44,16 @@ const ImageArray = () => {
             {translation.map ((mt, colIndex) => (
             <div key={colIndex} className={`w-60 h-full flex flex-col justify-center items-center gap-4 ${mt}`}>
                 <div className={`w-full h-80 bg-bg-btn-s-d rounded-2xl`}>
-                    <img src={`./src/assets/artwork/slideshow/${imageSrc[colIndex*3][0]}/${imageSrc[colIndex*3][1]}.png`} className="w-full h-full object-cover rounded-2xl pixelated" />
+                    <img src={`./assets/artwork/slideshow/${imageSrc[colIndex*3][0]}/${imageSrc[colIndex*3][1]}.png`} className="w-full h-full object-cover rounded-2xl pixelated" />
                 </div>
                 <div className={`w-full h-80 bg-bg-btn-s-d rounded-2xl`}>
-                    <img src={`./src/assets/artwork/slideshow/${imageSrc[colIndex*3+1][0]}/${imageSrc[colIndex*3+1][1]}.png`} className="w-full h-full object-cover rounded-2xl pixelated" />
+                    <img src={`./assets/artwork/slideshow/${imageSrc[colIndex*3+1][0]}/${imageSrc[colIndex*3+1][1]}.png`} className="w-full h-full object-cover rounded-2xl pixelated" />
                 </div>
                 <div className={`w-full h-80 bg-bg-btn-s-d rounded-2xl`}>
-                    <img src={`./src/assets/artwork/slideshow/${imageSrc[colIndex*3+2][0]}/${imageSrc[colIndex*3+2][1]}.png`} className="w-full h-full object-cover rounded-2xl pixelated" />
+                    <img src={`./assets/artwork/slideshow/${imageSrc[colIndex*3+2][0]}/${imageSrc[colIndex*3+2][1]}.png`} className="w-full h-full object-cover rounded-2xl pixelated" />
                 </div>
                 <div className={`w-full h-80 bg-bg-btn-s-d rounded-2xl`}>
-                    <img src={`./src/assets/artwork/slideshow/${imageSrc[colIndex*3+3][0]}/${imageSrc[colIndex*3+3][1]}.png`} className="w-full h-full object-cover rounded-2xl pixelated" />
+                    <img src={`./assets/artwork/slideshow/${imageSrc[colIndex*3+3][0]}/${imageSrc[colIndex*3+3][1]}.png`} className="w-full h-full object-cover rounded-2xl pixelated" />
                 </div>
             </div>
             ))}

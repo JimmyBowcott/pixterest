@@ -67,12 +67,12 @@ const PostPage = () => {
                         <div className="flex flex-row gap-4">
                             <button>
                                 <a href={postItem.src} download={postItem.filename} target="_blank">
-                                    <img src="./src/assets/icons/download.png" alt="more options" className="pixelated h-6" />
+                                    <img src="./assets/icons/download.png" alt="more options" className="pixelated h-6" />
                                 </a>
                             </button>
                             <button>
                                 <a href={postItem.link} target="_blank">
-                                    <img src="./src/assets/icons/arrow-up-right.png" alt="follow link" className="pixelated h-6" />
+                                    <img src="./assets/icons/arrow-up-right.png" alt="follow link" className="pixelated h-6" />
                                 </a>
                             </button>
                         </div>
