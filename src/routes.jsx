@@ -12,7 +12,7 @@ import { Navigate } from "react-router-dom";
 const routes = [
   {
     path: "/pixterest/",
-    element: <App />,
+    element: <LandingPage />,
     errorElement: <LandingPage />,
   },
   {
