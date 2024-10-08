@@ -1,5 +1,6 @@
 {
   "name": "pixterest",
+  "homepage": "https://jimmybowcott.github.io/pixterest/",
   "version": "1.0.0",
   "type": "module",
   "scripts": {

@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <SettingsProvider>
         <ModalProvider>
           <LastSearchProvider>
-            <Router>
+            <Router basename="/pixterest">
               <App />
             </Router>
           </LastSearchProvider>
