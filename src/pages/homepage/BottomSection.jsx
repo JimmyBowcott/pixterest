@@ -9,7 +9,6 @@ import ExploreButton from "../../components/ExploreButton";
 const BottomSection = () => {
 
     const { user } = useContext(AuthContext);
-    console.log(import.meta.env.API_URL);
 
     return (
         <>
