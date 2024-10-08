@@ -1,0 +1,45 @@
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce {
+    0% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -20px;
+    }
+    100% {
+      translate: 0 0;
+    }
+  }
+  
+  .leave {
+    animation: fadeOut 0.5s forwards;
+  }
+  
+  .enter {
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  .bounce {
+    animation: bounce 2s ease-in-out infinite;
+  }

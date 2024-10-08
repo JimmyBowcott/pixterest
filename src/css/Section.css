@@ -1,0 +1,33 @@
+@media (max-width: 1000px) {
+    .secText h1 {
+        font-size: 2rem;
+    }
+    .secText h2 {
+        font-size: 1.5rem;
+    }
+    .secText p {
+        font-size: 1rem;
+    }
+    .secText button {
+        font-size: 1rem;
+    }
+    .lowResHide {
+        display: none;
+    }
+}
+
+form input {
+    display: block;
+    font-size: 1.15rem;
+    height: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid lightgrey;
+    border-radius: 10px;
+    width: 100%;
+}
+
+form label {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}

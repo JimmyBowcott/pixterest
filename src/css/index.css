@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/assets/fonts/Minecraft-Italic.woff2') format('woff2'),
+        url('/assets/fonts/Minecraft-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/assets/fonts/Minecraft-Bold.woff2') format('woff2'),
+        url('/assets/fonts/Minecraft-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/assets/fonts/Minecraft-Regular.woff2') format('woff2'),
+        url('/assets/fonts/Minecraft-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/assets/fonts/Minecraft-BoldItalic.woff2') format('woff2'),
+        url('/assets/fonts/Minecraft-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spin {
+    animation: spin 2s linear infinite;
+}
+
+.spin-anti {
+    animation: spin 2s linear infinite reverse;
+}
+
+html, body {
+    font-family: 'Minecraft', sans-serif;
+    height: 100%;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.pixelated {
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+}
+
+:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Example: light blue */
+}
+
+.explore-tile-l {
+    width: 27rem;
+    height: 17rem;
+}
+
+.explore-tile-s {
+    width: 16rem;
+    height: 8rem;
+}
+
+@media (max-width: 420px) {
+    .explore-tile-l {
+      width: 250px;
+      height: 150px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    html {
+        font-size: calc(0.55vw + 0.55vh);
+    }
+  }
