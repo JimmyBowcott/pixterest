@@ -30,7 +30,7 @@ const PostPage = () => {
         if (items.length > 0) {
             setPostItem(items[index])
             setContextLoading(false);
-            if (user.savedPosts.some(item => item.link === items[index].link)) {
+            if (user && user.savedPosts.some(item => item.link === items[index].link)) {
                 setSaved(true);
             } else {
                 setSaved(false);

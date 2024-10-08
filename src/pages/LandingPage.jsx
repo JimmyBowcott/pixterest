@@ -5,6 +5,7 @@ import SearchSection from './homepage/SearchSection'
 import SaveSection from './homepage/SaveSection'
 import ShopSection from './homepage/ShopSection'
 import BottomSection from './homepage/BottomSection'
+import apiClient from '../apiClient';
 
 function LandingPage() {
   const [currentSection, setCurrentSection] = useState(0);
@@ -17,6 +18,9 @@ function LandingPage() {
   // Hide scrollbar
   useEffect(() => { 
     document.body.style.overflow = "hidden";
+    apiClient.get('/api/wake-up')
+    .then(response => response.json())
+    .catch(error => console.error('Error waking up server:', error));
   },[]);
 
   // Scroll to a given section
